@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
+
+.rtl{
+    direction: rtl;
+    text-align: right;
+}
+
+body{
+    font-family: 'Cairo', sans-serif;
+}
+.drop-menu.active{
+    display: flex;
+    
+    animation: slideDown .3s ease-in-out;
+}
+@keyframes slideDown{
+    0%{
+        transform: translateY(-10%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+.active{
+    display: flex;
+    animation: slideRight .3s ease-in-out forwards;
+}
+
+
+@keyframes slideRight{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+// lets add the hide if screen is small
+@media screen and (max-width: 768px){
+    #sidebar-menu{
+        display: none;
+    }
+}
