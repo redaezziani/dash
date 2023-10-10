@@ -12,51 +12,7 @@
 class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justify-start bg-gray-100'
 >
 <!-- nav bar  -->
-<nav
-class='w-full md:w-[90%] rounded-none md:rounded-md z-50  rtl flex items-center justify-between bg-white shadow-md p-4 sm:px-10  fixed top-0 '
->
-<div class="rtl">
-    <button
-    id="sidebar"
-    >
-    <i class='bx bx-menu text-gray-600 text-xl'></i>
-    </button>
-</div>
-<!--
-    search bar
--->
-
-<!--userbar -->
-<div class="group  ml-10 flex gap-5 justify-center items-center rtl">
-         <div class=" cursor-pointer notifecation relative text-xl mt-2 ">
-        <i class='bx bxs-envelope text-gray-600 '></i>
-        <span class="absolute top-0  right-0 w-2 h-2 bg-red-500 rounded-full text-white text-xs flex justify-center items-center"></span>
-         </div>
-         <div class=" cursor-pointer notification relative text-xl mt-2">
-           <i class='bx bxs-bell text-gray-600 ' ></i>
-           <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full text-white text-xs flex justify-center items-center"></span>
-         </div>
-<div
-id="user-bar"
-class="user-bar flex relative  justify-center px-3  items-center">
-    <div class="w-10 z-10 cursor-pointer bg-gray-400 h-10 rounded-md overflow-hidden ">
-        <img
-        class="w-full h-full object-cover"
-        src="{{asset('images/Avatar=545.png')}}"
-        />
-    </div>
-    <div
-    id="drop-menu"
-    class="drop-menu  w-36 border-slate-300/50 border  z-0  p-2 absolute top-16 gap-1 bg-white rounded-md hidden flex-col justify-start items-start rtl">
-        <a href="#" class="text-gray-500 text-sm hover:text-gray-600 transition-all ease-in-out duration-500">الملف الشخصي</a>
-        <hr class="w-full my-1">
-        <a href="#" class="text-gray-500 text-sm hover:text-gray-600 transition-all ease-in-out duration-500">الاعدادات</a>
-        <hr class="w-full my-1">
-        <a href="#" class="text-red-500 hover:text-red-600 transition-all ease-in-out duration-500 text-sm ">تسجيل الخروج</a>
-    </div>
-</div>
-</div>
-</nav>
+@include('navBar')
 <!-- end nav bar  -->
 
 <!-- sidebar  -->
@@ -117,129 +73,380 @@ class=' mt-3 flex justify-start w-full items-center hover:text-gray-600 duration
 <!-- end sidebar  -->
 
 <!-- main  -->
+<div class="w-full md:w-[90%] rtl flex mt-24 justify-start items-center ">
+    <div class="group flex ">
+        <a href="">
+            <p
+            class="text-gray-500 text-sm"
+            >
+                الرئيسية
+            </p>
+        </a>
+        <p
+        class="text-gray-500 text-sm"
+        >
+            /
 
+        </p>
+        <a href="">
+            <p
+            class="text-violet-500 text-sm"
+            >
+                العقود
+            </p>
+        </a>
+    </div>
+</div>
 <div class=" rounded-md bg-white mt-20 md:w-[90%] p-6 flex flex-col justify-start items-start rtl">
-    <h1
-    class="text-gray-700"
+    <div class=" w-full flex justify-end items-center">
+        <a href="">
+        <button
+        class=" bg-violet-600 flex justify-center gap-2 items-center text-white rounded-md px-3 py-1.5 text-sm"
+        >
+        اضافة عقد جديد
+        <i
+        class='bx bx-plus text-white text-xl ml-2'
+        >
+
+        </i>
+        </button>
+        </a>
+    </div>
+    
+    <div class=" w-full rtl flex flex-col md:flex-row  gap-3 mt-6 items-center">
+        <div class="text-group flex justify-start items-center gap-2">
+            <p
+            class="text-gray-500 text-sm"
+            >
+                البحث حسب الاسم العميل او رقم العقد
+            </p>
+            <p
+            class="text-gray-300 text-sm"
+            >
+            اجمالي العقود : 20
+            </p>
+            <p
+            class="text-gray-300 text-sm"
+            >
+            المكتملة : 10
+            </p>
+        </div>
+        <div class="search-group flex justify-start w-[90%]  sm:w-[60%] py-1.5 px-2 items-center gap-2 border border-slate-400 rounded-full">
+            <i
+            class='bx bx-search text-gray-500 text-xl'
+            >
+
+            </i>
+            <input
+            type="text"
+            class="outline-none bg-transparent text-gray-500 text-sm"
+            placeholder="ابحث هنا"
+            />
+        </div>
+    </div> 
+    <table
+    class="w-full mt-6 text-center text-gray-500 text-sm"
     >
-        اضافة تفاصيل العقد
-    </h1>
-    <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col ">
-    <div class="group-input w-1/2 sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
-        <label for="user-name" name='user-name'>
-            اسم العميل
-        </label>
-        <input
-        id="user-name"
-        type="text"
-        placeholder="اسم العميل"
-        class="border border-gray-500  text-sm  rounded-md p-2 w-80 focus:outline-none focus:ring-2 focus:ring-gray-200"
-        />
-    </div>
-    <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
-        <label
-        for="address"
-        name='address'
+        <thead
+        class="bg-slate-100 rounded-sm text-gray-500 text-sm"
         >
-            عنوان المشروع 
-        </label>
-        <input
-        id="address"
-        type="text"
-        placeholder="عنوان المشروع"
-        class="border border-gray-500  text-sm rounded-md p-2 w-80 focus:outline-none focus:ring-2 focus:ring-gray-200"
-        />
-    </div>
-    </div>
-    <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
-    <div class="group-input w-1/2 sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
-        <label 
-        for="date"
-        name='date'
+            <tr>
+                <th
+                class="py-2"
+                >
+                    اسم العميل
+                </th>
+                <th
+                class="py-2"
+                >
+                    رقم العقد
+                </th>
+                <th
+                class="py-2"
+                >
+                    تاريخ التعاقد
+                </th>
+                <th
+                class="py-2"
+                >
+                     المبلغ المدفوع
+                </th>
+                <th
+                class="py-2"
+                >
+                    المبلغ المتبقي
+                </th>
+                <th
+                class="py-2"
+                >
+                      اقسام كل شهر
+                </th>
+                <th
+                class="py-2"
+                >
+                     عقد 
+                </th>
+                <th
+                class="py-2"
+                >
+                     فاتورة
+                </th>
+                <th
+                class="py-2"
+                >
+                    الخيارات
+                </th>
+            </tr>
+        </thead>
+        <tbody
+        class="bg-white max-h-[5rem] overflow-hidden text-gray-500 text-sm"
         >
-            تاريخ العقد 
-        </label>
-        <input
-        id="date"
-        type="date"
-        placeholder=" تاريخ العقد" 
-        class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200"
-        />
-     </div>
-     <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
-        <label 
-        for="contract-number"
-        name='contract-number'
-        >
-             رقم العقد 
-        </label>
-        <input
-        id="contract-number"
-        type="text"
-        placeholder=" رقم العقد"
-        class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200"
-        />
-     </div>
-    </div>
-    <div class=" flex rtl mt-2   gap-1 w-full">
-    <div class="group-input flex w-full flex-col gap-2 justify-start items-start rtl">
-        <label
-        for="project-description"
-        name='project-description'
-        >
-              وصف المشروع 
-        </label>
-        <input
-        id="project-description"
-        type="text"
-        placeholder=" وصف المشروع"
-        class="border border-gray-500 text-start  text-sm rounded-md p-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-gray-200"
-        />
-        </div>
-     </div>
-     <div class="group-input flex w-full flex-col gap-2 justify-start items-start rtl">
-        <label
-        for='acc'
-        name='acc'
-        >
-              المتفق عليه  
-        </label>
-        <input
-        id="acc"
-        type="text"
-        placeholder="  المتفق عليه"
-        class="border border-gray-500 text-start  text-sm rounded-md p-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-gray-200"
-        />
-        </div>
-        <div class="group-input flex sm:w-full flex-col gap-2 justify-start items-start rtl">
-        <label 
-        for='conditions'
-        name='conditions'
-         >
-                الشروط والاحكام
-        </label>
-        <input
-        id="conditions"
-        type="text"
-        placeholder="  الشروط والاحكام"
-        class="border border-gray-500 text-start  text-sm rounded-md p-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-gray-200"
-        />
-        </div>
-     </div>
-     
+            <tr
+            class="border-b border-slate-100"
+            >
+                <td
+                class="py-2 truncate"
+                >
+                    احمد محمد
+                </td>
+                <td
+                class="py-2 truncate"
+                >
+                    123456
+                </td>
+                <td
+                class="py-2"
+                >
+                    12/12/2021
+                </td>
+                <td
+                class="py-2"
+                >
+                    1000
+                </td>
+                <td
+                class="py-2"
+                >
+                    1000
+                </td>
+                <td
+                class="py-2"
+                >
+                    100
+                </td>
+                <td
+                class="py-2"
+                >
+                    <a href="">
+                    <button
+                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                    >
+                        عقد
+                    </button>
+                    </a>
+                </td>
+                <td
+                class="py-2"
+                >
+                    <a href="">
+                    <button
+                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                    >
+                        فاتورة
+                    </button>
+                    </a>
+                </td>
+                <td
+                class="py-2"
+                >
+                    <div class="flex justify-center items-center gap-2">
+                        <a href="">
+                        <button
+                        class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                        >
+                            تعديل
+                        </button>
+                        </a>
+                        <a href="">
+                        <button
+                        class="bg-red-500 text-white rounded-md px-3 py-1.5 text-sm"
+                        >
+                            حذف
+                        </button>
+                        </a>
+                    </div>
+                </td>
+            </tr>  
+            <tr
+            class="border-b border-slate-100"
+            >
+                <td
+                class="py-2 truncate"
+                >
+                    محمد علي
+                </td>
+                <td
+                class="py-2 truncate"
+                >
+                    789012
+                </td>
+                <td
+                class="py-2"
+                >
+                    01/01/2022
+                </td>
+                <td
+                class="py-2"
+                >
+                    2000
+                </td>
+                <td
+                class="py-2"
+                >
+                    1500
+                </td>
+                <td
+                class="py-2"
+                >
+                    200
+                </td>
+                <td
+                class="py-2"
+                >
+                    <a href="">
+                    <button
+                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                    >
+                        عقد
+                    </button>
+                    </a>
+                </td>
+                <td
+                class="py-2"
+                >
+                    <a href="">
+                    <button
+                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                    >
+                        فاتورة
+                    </button>
+                    </a>
+                </td>
+                <td
+                class="py-2"
+                >
+                    <div class="flex justify-center items-center gap-2">
+                        <a href="">
+                        <button
+                        class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                        >
+                            تعديل
+                        </button>
+                        </a>
+                        <a href="">
+                        <button
+                        class="bg-red-500 text-white rounded-md px-3 py-1.5 text-sm"
+                        >
+                            حذف
+                        </button>
+                        </a>
+                    </div>
+                </td>
+            </tr>  
+            <tr
+            class="border-b border-slate-100"
+            >
+                <td
+                class="py-2 truncate"
+                >
+                    علي احمد
+                </td>
+                <td
+                class="py-2 truncate"
+                >
+                    345678
+                </td>
+                <td
+                class="py-2"
+                >
+                    05/02/2022
+                </td>
+                <td
+                class="py-2"
+                >
+                    3000
+                </td>
+                <td
+                class="py-2"
+                >
+                    2000
+                </td>
+                <td
+                class="py-2"
+                >
+                    300
+                </td>
+                <td
+                class="py-2"
+                >
+                    <a href="">
+                    <button
+                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                    >
+                        عقد
+                    </button>
+                    </a>
+                </td>
+                <td
+                class="py-2"
+                >
+                    <a href="">
+                    <button
+                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                    >
+                        فاتورة
+                    </button>
+                    </a>
+                </td>
+                <td
+                class="py-2"
+                >
+                    <div class="flex justify-center items-center gap-2">
+                        <a href="">
+                        <button
+                        class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                        >
+                            تعديل
+                        </button>
+                        </a>
+                        <a href="">
+                        <button
+                        class="bg-red-500 text-white rounded-md px-3 py-1.5 text-sm"
+                        >
+                            حذف
+                        </button>
+                        </a>
+                    </div>
+                </td>
+            </tr>  
+        </tbody>
+    </table>
+    
 </div>
 
-<div class="w-full py-7 mt-6 flex rtl justify-center items-center gap-5 ">
-    <button
-    class="bg-gray-400 text-white rounded-md p-2 px-4 hover:bg-gray-400 transition-all ease-in-out duration-500"
-    >
-    الغاء العقد
-    </button>
-    <button
-    class=" bg-indigo-400 text-white rounded-md p-2 px-4 hover:bg-indigo-500 transition-all ease-in-out duration-500"
-    >
-    انشاء العقد
-    </button>
+<div class="w-full flex justify-center items-center mt-4">
+<div class="pagination flex justify-center mt-8">
+        <a href="#" class="px-3 py-1 bg-gray-200 rounded-md mx-1 hover:bg-gray-300">السابق</a>
+        <a href="#" class="px-3 py-1 bg-gray-200 rounded-md mx-1 hover:bg-gray-300">1</a>
+        <a href="#" class="px-3 py-1 bg-gray-200 rounded-md mx-1 hover:bg-gray-300">2</a>
+        <a href="#" class="px-3 py-1 bg-gray-200 rounded-md mx-1 hover:bg-gray-300">3</a>
+        <a href="#" class="px-3 py-1 bg-gray-200 rounded-md mx-1 hover:bg-gray-300">4</a>
+        <a href="#" class="px-3 py-1 bg-gray-200 rounded-md mx-1 hover:bg-gray-300">5</a>
+        <a href="#" class="px-3 py-1 bg-gray-200 rounded-md mx-1 hover:bg-gray-300">التالي</a>
+    </div>
+</div>
+
+<!-- end main  -->
 <script>
     const dropMenu= document.getElementById('drop-menu');
 const userBar= document.getElementById('user-bar');
