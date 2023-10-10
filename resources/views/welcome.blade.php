@@ -98,7 +98,7 @@
                 <label for="project-description" name='project-description'>
                     وصف المشروع
                 </label>
-                <input id="project-description" type="text" placeholder=" وصف المشروع"
+                <input id="project-description" type="text" placeholder="وصف المشروع"
                     class="border border-gray-500 text-start  text-sm rounded-md p-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -106,7 +106,7 @@
             <label for='acc' name='acc'>
                 المتفق عليه
             </label>
-            <input id="acc" type="text" placeholder="  المتفق عليه"
+            <input id="acc" type="text" placeholder="المتفق عليه"
                 class="border border-gray-500 text-start  text-sm rounded-md p-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
         <div class="group-input flex w-full flex-col gap-2 justify-start items-start rtl">
