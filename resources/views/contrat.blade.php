@@ -18,8 +18,8 @@
      @if (session()->has('message'))
      <script>
                  Swal.fire(
-                     'تم اضافة الدورة الى السلة بنجاح',
-                     '! يمكنك اضافة المزيد . تابع التصفح ',
+                     'تمت الاضافة بنجاح',
+                     '',
                      'success'
                  )
      </script>
@@ -47,14 +47,14 @@
                 <label for="user-name">
                     اسم العميل
                 </label>
-                <input  id="user-name"  name='name' type="text" placeholder="اسم العميل"
+                <input required id="user-name"  name='name' type="text" placeholder="اسم العميل"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="address">
                     عنوان المشروع
                 </label>
-                <input  id="address" type="text" name='adress' placeholder="عنوان المشروع"
+                <input required  id="address" type="text" name='adress' placeholder="عنوان المشروع"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -63,14 +63,14 @@
                 <label for="date">
                     تاريخ العقد
                 </label>
-                <input  name='date' id="date" type="date" placeholder=" تاريخ العقد"
+                <input required name='date' id="date" type="date" placeholder=" تاريخ العقد"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number">
                     رقم العقد
                 </label>
-                <input  id="contract-number"  name='num_contrat' type="text" placeholder=" رقم العقد"
+                <input required id="contract-number"  name='num_contrat' type="text" placeholder=" رقم العقد"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -79,14 +79,14 @@
                 <label for="date">
                   المبلغ الاجمالي
                 </label>
-                <input  id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
+                <input required id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   المبلغ المدفوع
                 </label>
-                <input  id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
+                <input required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -105,7 +105,7 @@
                 <label style="display: none" for="contract-number" name='label' id='label'>
                   مبلغ الأقساط
                 </label>
-                <input  id="credit_price" name="credit_price" type="number" placeholder="مبلغ الأقساط"
+                <input required id="credit_price" name="credit_price" type="number" placeholder="مبلغ الأقساط"
                     style="display: none" class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -114,7 +114,7 @@
                 <label for="project-description" >
                     وصف المشروع
                 </label>
-                <input  id="project-description" name='desc' type="text" placeholder="وصف المشروع"
+                <input required id="project-description" name='desc' type="text" placeholder="وصف المشروع"
                     class="border border-gray-500 text-start  text-sm rounded-md p-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -122,14 +122,14 @@
             <label for='acc'>
                 المتفق عليه
             </label>
-            <input  id="acc" name='daccord' type="text" placeholder="المتفق عليه"
+            <input required id="acc" name='daccord' type="text" placeholder="المتفق عليه"
                 class="border border-gray-500 text-start  text-sm rounded-md p-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
         <div class="group-input flex w-full flex-col gap-2 justify-start items-start rtl">
             <label for='conditions' >
                 الشروط والاحكام
             </label>
-            <input  id="conditions" name='condition' type="text" placeholder="  الشروط والاحكام"
+            <input required id="conditions" name='condition' type="text" placeholder="  الشروط والاحكام"
                 class="border border-gray-500 text-start  text-sm rounded-md p-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
     </div>
