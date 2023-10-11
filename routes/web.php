@@ -16,6 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/fom', function () {
-    return view('welcome');
-});
+Route::post('/Store', [App\Http\Controllers\Controller::class, 'store'])->name('Store');
+
