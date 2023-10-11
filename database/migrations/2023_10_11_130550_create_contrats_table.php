@@ -9,18 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('contrats', function (Blueprint $table) {
             $table->id();
             $table->string('nom')->nullable();
             $table->string('adress')->nullable();
             $table->date('date')->nullable();
-            $table->string('num_contrat')->nullable();
+            $table->integer('num_contrat')->nullable();
             $table->integer('full_price')->nullable();
             $table->integer('done_price')->nullable();
             $table->string('credit')->nullable();
-            $table->string('credit_price')->nullable();
+            $table->integer('credit_price')->nullable();
             $table->string('desc')->nullable();
             $table->string('daccord')->nullable();
             $table->string('condition')->nullable();

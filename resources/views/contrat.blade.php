@@ -47,7 +47,7 @@
                 <label for="user-name">
                     اسم العميل
                 </label>
-                <input required id="user-name"  name='name' type="text" placeholder="اسم العميل"
+                <input required id="user-name"  name='nom' type="text" placeholder="اسم العميل"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
@@ -70,7 +70,7 @@
                 <label for="contract-number">
                     رقم العقد
                 </label>
-                <input required id="contract-number"  name='num_contrat' type="text" placeholder=" رقم العقد"
+                <input  disabled value="{{$count+1}}" id="contract-number"  name='num_contrat' type="text" placeholder=" رقم العقد"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -105,7 +105,7 @@
                 <label style="display: none" for="contract-number" name='label' id='label'>
                   مبلغ الأقساط
                 </label>
-                <input required id="credit_price" name="credit_price" type="number" placeholder="مبلغ الأقساط"
+                <input id="credit_price" name="credit_price" type="number" placeholder="مبلغ الأقساط"
                     style="display: none" class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>

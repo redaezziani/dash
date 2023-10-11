@@ -6,6 +6,9 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>
         </title>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+
         @vite('resources/css/app.css')
     </head>
     <body
@@ -18,7 +21,15 @@ class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justi
  <!-- end nav bar  -->
  @include('side-bar')
  <!-- sidebar  -->
-
+ @if (session()->has('message'))
+ <script>
+             Swal.fire(
+                 "تم الحدف بنجاح",
+                 '',
+                 'success'
+             )
+ </script>
+@endif
 <!-- main  -->
 <div class="w-full md:w-[90%] rtl flex mt-24 justify-start items-center ">
     <div class="group flex ">
@@ -46,7 +57,7 @@ class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justi
 </div>
 <div class=" rounded-md bg-white mt-20 md:w-[90%] p-6 flex flex-col justify-start items-start rtl">
     <div class=" w-full flex justify-end items-center">
-        <a href="">
+        <a href="/Add-Contrat">
         <button
         class=" bg-violet-600 flex justify-center gap-2 items-center text-white rounded-md px-3 py-1.5 text-sm"
         >
@@ -116,6 +127,11 @@ class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justi
                 <th
                 class="py-2"
                 >
+                     المبلغ الاجمالي
+                </th>
+                <th
+                class="py-2"
+                >
                      المبلغ المدفوع
                 </th>
                 <th
@@ -126,7 +142,12 @@ class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justi
                 <th
                 class="py-2"
                 >
-                      اقسام كل شهر
+                      مع أقساط
+                </th>
+                <th
+                class="py-2"
+                >
+                      اقساط كل شهر
                 </th>
                 <th
                 class="py-2"
@@ -148,38 +169,49 @@ class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justi
         <tbody
         class="bg-white max-h-[5rem] overflow-hidden text-gray-500 text-sm"
         >
+        @foreach($contrats as $item)
             <tr
             class="border-b border-slate-100"
             >
                 <td
                 class="py-2 truncate"
                 >
-                    احمد محمد
+                    {{ $item->nom }}
                 </td>
                 <td
                 class="py-2 truncate"
                 >
-                    123456
+                    {{ $item->num_contrat }}
+                </td>
+                <td
+                class="py-2 truncate"
+                >
+                    {{ $item->date }}
                 </td>
                 <td
                 class="py-2"
                 >
-                    12/12/2021
+                    {{ $item->full_price }}
                 </td>
                 <td
                 class="py-2"
                 >
-                    1000
+                    {{ $item->done_price }}
                 </td>
                 <td
                 class="py-2"
                 >
-                    1000
+                    {{ $item->credit }}
                 </td>
                 <td
                 class="py-2"
                 >
-                    100
+                    {{ $item->full_price - $item->done_price}}
+                </td>
+                <td
+                class="py-2"
+                >
+                    {{ $item->credit_price}}
                 </td>
                 <td
                 class="py-2"
@@ -214,7 +246,7 @@ class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justi
                             تعديل
                         </button>
                         </a>
-                        <a href="">
+                        <a href="/Delete/{{$item->id}}">
                         <button
                         class="bg-red-500 text-white rounded-md px-3 py-1.5 text-sm"
                         >
@@ -224,158 +256,7 @@ class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justi
                     </div>
                 </td>
             </tr>
-            <tr
-            class="border-b border-slate-100"
-            >
-                <td
-                class="py-2 truncate"
-                >
-                    محمد علي
-                </td>
-                <td
-                class="py-2 truncate"
-                >
-                    789012
-                </td>
-                <td
-                class="py-2"
-                >
-                    01/01/2022
-                </td>
-                <td
-                class="py-2"
-                >
-                    2000
-                </td>
-                <td
-                class="py-2"
-                >
-                    1500
-                </td>
-                <td
-                class="py-2"
-                >
-                    200
-                </td>
-                <td
-                class="py-2"
-                >
-                    <a href="">
-                    <button
-                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
-                    >
-                        عقد
-                    </button>
-                    </a>
-                </td>
-                <td
-                class="py-2"
-                >
-                    <a href="">
-                    <button
-                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
-                    >
-                        فاتورة
-                    </button>
-                    </a>
-                </td>
-                <td
-                class="py-2"
-                >
-                    <div class="flex justify-center items-center gap-2">
-                        <a href="">
-                        <button
-                        class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
-                        >
-                            تعديل
-                        </button>
-                        </a>
-                        <a href="">
-                        <button
-                        class="bg-red-500 text-white rounded-md px-3 py-1.5 text-sm"
-                        >
-                            حذف
-                        </button>
-                        </a>
-                    </div>
-                </td>
-            </tr>
-            <tr
-            class="border-b border-slate-100"
-            >
-                <td
-                class="py-2 truncate"
-                >
-                    علي احمد
-                </td>
-                <td
-                class="py-2 truncate"
-                >
-                    345678
-                </td>
-                <td
-                class="py-2"
-                >
-                    05/02/2022
-                </td>
-                <td
-                class="py-2"
-                >
-                    3000
-                </td>
-                <td
-                class="py-2"
-                >
-                    2000
-                </td>
-                <td
-                class="py-2"
-                >
-                    300
-                </td>
-                <td
-                class="py-2"
-                >
-                    <a href="">
-                    <button
-                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
-                    >
-                        عقد
-                    </button>
-                    </a>
-                </td>
-                <td
-                class="py-2"
-                >
-                    <a href="">
-                    <button
-                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
-                    >
-                        فاتورة
-                    </button>
-                    </a>
-                </td>
-                <td
-                class="py-2"
-                >
-                    <div class="flex justify-center items-center gap-2">
-                        <a href="">
-                        <button
-                        class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
-                        >
-                            تعديل
-                        </button>
-                        </a>
-                        <a href="">
-                        <button
-                        class="bg-red-500 text-white rounded-md px-3 py-1.5 text-sm"
-                        >
-                            حذف
-                        </button>
-                        </a>
-                    </div>
-                </td>
-            </tr>
+        @endforeach
         </tbody>
     </table>
 

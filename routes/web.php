@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 Route::get('/Add-Contrat', [App\Http\Controllers\Controller::class, 'Add'])->name('Add');
 Route::get('/Show', [App\Http\Controllers\Controller::class, 'Show'])->name('Show');
+Route::get('/Delete/{id}', [App\Http\Controllers\Controller::class, 'Delete'])->name('Dlete');
 Route::post('/Store', [App\Http\Controllers\Controller::class, 'store'])->name('Store');
 
