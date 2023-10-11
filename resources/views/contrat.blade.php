@@ -152,7 +152,6 @@
         dropMenu.classList.toggle('active');
     })
 
-
     var sidebar = document.getElementById("sidebar");
     var closeSidebar = document.getElementById("close-sidebar");
     var sidebarMenu = document.getElementById("sidebar-menu");
