@@ -18,6 +18,12 @@
  <hr class="w-full my-2">
  <div
      class=' mt-3 flex justify-start w-full items-center hover:text-gray-600 duration-500 transition-all ease-in-out  text-gray-500 '>
+     <a href="/">
+            الرئيسية
+     </a>
+ </div>
+ <div
+     class=' mt-3 flex justify-start w-full items-center hover:text-gray-600 duration-500 transition-all ease-in-out  text-gray-500 '>
      <a href="/Add-Contrat">
          انشاء عقد جديد
      </a>

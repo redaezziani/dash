@@ -12,7 +12,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class=' font-cairo scrollbar-thin w-full relative h-screen flex items-center flex-col justify-start bg-gray-100'>
+<body class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen flex items-center flex-col justify-start bg-gray-100'>
 
      <!-- Show Done Alert -->
      @if (session()->has('message'))
