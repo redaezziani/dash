@@ -20,9 +20,6 @@
 
 
     <!-- main  -->
-            <h1>
-                Home
-            </h1>
 </html>
 <script>
     const dropMenu = document.getElementById('drop-menu');
