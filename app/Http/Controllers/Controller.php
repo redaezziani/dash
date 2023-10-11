@@ -27,7 +27,13 @@ class Controller extends BaseController
     $contrat->condition = $request->input('condition');
     $contrat->save();
 
-    return view('welcome')->with('message', 'yes');
+    return redirect()->back()->with('message', 'azerty');
 }
 
+function Add(){
+    return view('contrat');
+}
+function Show(){
+    return view('Show');
+}
 }
