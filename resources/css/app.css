@@ -10,9 +10,6 @@
     text-align: right;
 }
 
-body{
-    font-family: 'Cairo', sans-serif;
-}
 .drop-menu.active{
     display: flex;
     

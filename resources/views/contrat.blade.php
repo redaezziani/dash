@@ -12,7 +12,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justify-start bg-gray-100'>
+<body class=' font-cairo scrollbar-thin w-full relative h-screen flex items-center flex-col justify-start bg-gray-100'>
 
      <!-- Show Done Alert -->
      @if (session()->has('message'))
@@ -150,6 +150,7 @@
 
     userBar.addEventListener('click', function() {
         dropMenu.classList.toggle('active');
+        
     })
 
     var sidebar = document.getElementById("sidebar");
@@ -158,12 +159,28 @@
 
     sidebar.addEventListener("click", function() {
         sidebarMenu.classList.contains("hidden") ? sidebarMenu.classList.remove("hidden") : sidebarMenu
-            .classList.add("hidden");
+            .classList.add("hidden ");
+
+       // lets add animate-slide-right
+       
+       if (sidebarMenu.classList.contains("animate-slide-right")) {
+           sidebarMenu.classList.remove("animate-slide-right");
+       } else {
+           sidebarMenu.classList.add("animate-slide-right");
+       }
     })
 
     closeSidebar.addEventListener("click", function() {
         sidebarMenu.classList.contains("hidden") ? sidebarMenu.classList.remove("hidden") : sidebarMenu
             .classList.add("hidden");
+
+        // lets add animate-slide-right
+
+        if (sidebarMenu.classList.contains("animate-slide-right")) {
+            sidebarMenu.classList.remove("animate-slide-right");
+        } else {
+            sidebarMenu.classList.add("animate-slide-right");
+        }
     })
 
     document.getElementById('yesno').addEventListener('change', function() {

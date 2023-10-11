@@ -5,7 +5,7 @@ class='w-full md:w-[90%] rounded-none md:rounded-md z-50  rtl flex items-center 
     <button
     id="sidebar"
     >
-    <i class='bx bx-menu text-gray-600 text-xl'></i>
+    <i class='bx bx-menu text-gray-600 text-3xl'></i>
     </button>
 </div>
 <!--
