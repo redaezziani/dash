@@ -30,4 +30,10 @@ class Controller extends BaseController
     return view('welcome')->with('message', 'yes');
 }
 
+function Add(){
+    return view('contrat');
+}
+function Show(){
+    return view('Show');
+}
 }
