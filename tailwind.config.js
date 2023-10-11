@@ -6,7 +6,25 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        "slide-right": {
+          "0%": {
+            right: "-100%",
+          },
+          "100%": {
+            right: "0",
+          },
+        },
+      },
+      animation: {
+        "slide-right": "slide-right .6s forwards",
+      },
+
+      fontFamily: {
+        cairo: ["Cairo"],
+      },
+    },
   },
   plugins: [],
 }

@@ -12,7 +12,7 @@
         @vite('resources/css/app.css')
     </head>
     <body
-class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justify-start bg-gray-100'
+class=' font-cairo scrollbar-thin w-full relative h-screen flex items-center flex-col justify-start bg-gray-100'
 >
 <!-- nav bar  -->
 @include('navBar')

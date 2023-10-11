@@ -1,6 +1,6 @@
  <!-- sidebar  -->
  <div id="sidebar-menu"
- class=" p-3 rtl z-[99] w-72 h-screen bg-white shadow-md fixed top-0  right-0  hidden flex-col justify-start items-center py-5">
+ class=" p-3    rtl z-[99] w-72 h-screen bg-white shadow-md fixed top-0  right-0  hidden flex-col justify-start items-center py-5">
  <div class="logo w-full flex justify-between  items-center">
      <h1 class="text-lg font-bold text-gray-700">لوحة التحكم</h1>
      <button id="close-sidebar"
