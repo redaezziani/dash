@@ -7,12 +7,23 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>
     </title>
-    <script src="sweetalert2.min.js"></script>
-    <link rel="stylesheet" href="sweetalert2.min.css">
     @vite('resources/css/app.css')
 </head>
 
 <body class=' scrollbar-thin w-full relative h-screen flex items-center flex-col justify-start bg-gray-100'>
+
+     <!-- Show Done Alert -->
+     @if (session()->has('message'))
+     <script>
+                 Swal.fire(
+                     'تم اضافة الدورة الى السلة بنجاح',
+                     '! يمكنك اضافة المزيد . تابع التصفح ',
+                     'success'
+                 )
+     </script>
+    @endif
+
+
     <!-- nav bar  -->
     @include('navBar')
     <!-- end nav bar  -->
