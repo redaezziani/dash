@@ -21,7 +21,7 @@ class Controller extends BaseController
     $contrat->full_price = $request->input('full_price');
     $contrat->done_price = $request->input('done_price');
     $contrat->credit = $request->input('credit');
-    $contrat->credit_price = $request->input('creditprice');
+    $contrat->credit_price = $request->input('credit_price');
     $contrat->desc = $request->input('desc');
     $contrat->daccord = $request->input('daccord');
     $contrat->condition = $request->input('condition');
@@ -31,9 +31,16 @@ class Controller extends BaseController
 }
 
 function Add(){
-    return view('contrat');
+    $count = Contrat::count();
+    return view('contrat')->with('count',$count);
 }
 function Show(){
-    return view('Show');
+    $contrats = Contrat::all();
+    return view('Show')->with('contrats',$contrats);
+}
+function Delete($id){
+    $contrat = Contrat::find($id);
+    $contrat->delete();
+    return redirect()->back()->with('message', 'تم الحدف بنجاح');
 }
 }
