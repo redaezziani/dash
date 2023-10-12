@@ -76,26 +76,26 @@
             </div>
         </div>
         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
-            <div class="group-input w-1/2 sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
+            <div class="group-input w-[30%] sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
                 <label for="date">
                   المبلغ الاجمالي
                 </label>
                 <input required id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
-                    class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                    class="border border-gray-500  text-sm  rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
-            <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
+            <div class="group-input w-[30%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   المبلغ المدفوع
                 </label>
                 <input required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
-                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                    class="border border-gray-500  text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
-            <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
+            <div class="group-input w-[30%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   المبلغ المتبقي
                 </label>
                 <input required id="contract-number" name="credit_price" type="number" placeholder="المبلغ المدفوع"
-                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                    class="border border-gray-500  text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
@@ -116,21 +116,21 @@
         </div>
         @for($i = 1; $i <= 9; $i++)
         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
-        <div class="group-input w-1/2 sm:w-full  flex flex-col gap-1 justify-start items-start rtl">
+        <div class="group-input md:w-[25%] w-full  flex flex-col gap-1 justify-start items-start rtl">
             <label for="desc_facture_{{ $i }}"> الوصف {{ $i }}</label>
-            <input  id="desc_facture_{{ $i }}" name="desc_facture_{{ $i }}" type="number" placeholder="المبلغ الاجمالي" class="border border-gray-500 text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            <input  id="desc_facture_{{ $i }}" name="desc_facture_{{ $i }}" type="text" placeholder="المبلغ الاجمالي" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
-        <div class="group-input w-1/2 flex sm:w-full flex-col gap-1 justify-start items-start rtl">
+        <div class="group-input md:w-[25%] flex w-full flex-col gap-1 justify-start items-start rtl">
             <label for="qte_{{ $i }}"> الكمية {{ $i }}</label>
-            <input  id="qte_{{ $i }}" name="qte_{{ $i }}" type="number" placeholder="المبلغ المدفوع" class="border border-gray-500 text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            <input  id="qte_{{ $i }}" name="qte_{{ $i }}" type="number" placeholder="المبلغ المدفوع" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
-        <div class="group-input w-1/2 flex sm:w-full flex-col gap-1 justify-start items-start rtl">
+        <div class="group-input md:w-[25%] flex w-full flex-col gap-1 justify-start items-start rtl">
             <label for="price_qte_{{ $i }}"> سعر الوحدة {{ $i }}</label>
-            <input  id="price_qte_{{ $i }}" name="price_qte_{{ $i }}" type="number" placeholder="المبلغ المدفوع" class="border border-gray-500 text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            <input  id="price_qte_{{ $i }}" name="price_qte_{{ $i }}" type="number" placeholder="المبلغ المدفوع" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
-        <div class="group-input w-1/2 flex sm:w-full flex-col gap-1 justify-start items-start rtl">
+        <div class="group-input md:w-[25%] flex w-full flex-col gap-1 justify-start items-start rtl">
             <label for="total_qte_{{ $i }}">  السعر الكلي {{ $i }} </label>
-            <input readonly id="total_qte_{{ $i }}" name="total_qte_{{ $i }}" type="number" placeholder="المبلغ المدفوع" class="border border-gray-500 text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            <input readonly id="total_qte_{{ $i }}" name="total_qte_{{ $i }}" type="number" placeholder="المبلغ المدفوع" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
     </div>
     @endfor
