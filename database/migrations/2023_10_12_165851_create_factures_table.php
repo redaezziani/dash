@@ -17,10 +17,11 @@ return new class extends Migration
             $table->string('adress')->nullable();
             $table->date('date')->nullable();
             $table->integer('phone')->nullable();
-            $table->integer('Full-price')->nullable();
+            $table->integer('full-price')->nullable();
             $table->integer('done_price')->nullable();
             $table->integer('credit_price')->nullable();
             $table->string('ident')->nullable();
+            $table->string('desc')->nullable();
             $table->string('desc_facture_1')->nullable();
             $table->string('qte_1')->nullable();
             $table->string('price_qte_1')->nullable();
