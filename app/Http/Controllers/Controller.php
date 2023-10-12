@@ -78,4 +78,7 @@ function Up(Request $request){
 
     return redirect()->back()->with('message', 'azerty');
 }
+    function AddFacture(){
+        return view('Facture');
+    }
 }

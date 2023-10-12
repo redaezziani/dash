@@ -36,7 +36,7 @@
  </div>
  <div
      class=' mt-3 flex justify-start w-full items-center hover:text-gray-600 duration-500 transition-all ease-in-out  text-gray-500 '>
-     <a href="">
+     <a href="/Add-Facture">
          الفواتير
      </a>
  </div>

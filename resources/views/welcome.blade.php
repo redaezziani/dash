@@ -7,7 +7,16 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>
     </title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.32/sweetalert2.min.js" integrity="sha512-3PL7jW3xI1EjF2Hfqwv5u6nKG/BnUbWytnJDhsY/q5CbIB5XzoHNhJvgmFeVD7xgC9DbKDm+gPP9uDAAfLAZUA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     @vite('resources/css/app.css')
 </head>
 
@@ -19,6 +28,15 @@
      <!-- sidebar  -->
      @include('side-bar')
     <!-- end sidebar  -->
+    @if (session()->has('message'))
+    <script>
+                Swal.fire(
+                    "تم بنجاح",
+                    '',
+                    'success'
+                )
+    </script>
+   @endif
     <div class="w-full md:w-[90%] px-4 md:p-0 rtl flex mt-24 justify-start items-center ">
     <div class="group flex ">
         <a href="/">
@@ -104,7 +122,7 @@
     <p
     class=" text-slate-300  text-sm mt-2"
     >
-    من خلال هذه الصفحة يمكنك مشاهدة اخر العقود المضافة
+    من خلال هذه الصفحة يمكنك مشاهدة اخر 3 عقود مضافة
     </p>
     </div>
     <!--table-->
@@ -262,8 +280,8 @@
         </tbody>
     </table>
     </div>
-</body>
 
     <!-- main  -->
     @include('script')
+    @include("modalEdit");
 </html>

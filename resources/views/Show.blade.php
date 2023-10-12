@@ -31,7 +31,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
  @if (session()->has('message'))
  <script>
              Swal.fire(
-                 "تم الحدف بنجاح",
+                 "تم بنجاح",
                  '',
                  'success'
              )
@@ -40,7 +40,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
 <!-- main  -->
 <div class="w-full md:w-[90%] rtl flex mt-24 justify-start items-center ">
     <div class="group flex ">
-        <a href="">
+        <a href="/">
             <p
             class="text-gray-500 text-sm"
             >
