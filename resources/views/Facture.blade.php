@@ -36,7 +36,7 @@
     <!-- end sidebar  -->
 
     <!-- main  -->
-    <form action="{{ route('Store') }}" class=" rounded-md bg-white mt-20 md:w-[90%] p-6 flex flex-col justify-start items-start rtl" method="POST">
+    <form action="{{ route('Store-Facture') }} class=" rounded-md bg-white mt-20 md:w-[90%] p-6 flex flex-col justify-start items-start rtl" method="POST">
         @csrf
     <div class=" rounded-md bg-white mt-20 md:w-[90%] p-6 flex flex-col justify-start items-start rtl">
         <h1 class="text-gray-700">
@@ -47,14 +47,14 @@
                 <label for="user-name">
                     اسم العميل
                 </label>
-                <input required id="user-name"  name='nom' type="text" placeholder="اسم العميل"
+                <input  id="user-name"  name='nom' type="text" placeholder="اسم العميل"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="address">
                     عنوان العميل
                 </label>
-                <input required  id="address" type="text" name='adress' placeholder="عنوان المشروع"
+                <input   id="address" type="text" name='adress' placeholder="عنوان المشروع"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -63,7 +63,7 @@
                 <label for="date">
                     تاريخ الفاتورة
                 </label>
-                <input required name='date' id="date" type="date" placeholder=" تاريخ العقد"
+                <input  name='date' id="date" type="date" placeholder=" تاريخ العقد"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
@@ -71,7 +71,7 @@
                     رقم الهاتف
                 </label>
                 <input type="hidden" name="phone" value="">
-                <input  required value="" id="contract-number" type="text" placeholder=" رقم العقد"
+                <input   value="" id="contract-number" type="text" placeholder=" رقم العقد"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -80,21 +80,21 @@
                 <label for="date">
                   المبلغ الاجمالي
                 </label>
-                <input required id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
+                <input  id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   المبلغ المدفوع
                 </label>
-                <input required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
+                <input  id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   المبلغ المتبقي
                 </label>
-                <input required id="contract-number" name="credit_price" type="number" placeholder="المبلغ المدفوع"
+                <input  id="contract-number" name="credit_price" type="number" placeholder="المبلغ المدفوع"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -103,14 +103,14 @@
                 <label for="date">
                   رقم الهوية
                 </label>
-                <input required id="fullprice" name="ident" type="number" placeholder="المبلغ الاجمالي"
+                <input  id="fullprice" name="ident" type="number" placeholder="المبلغ الاجمالي"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   وصف الفاتورة
                 </label>
-                <input required id="contract-number" name="desc" type="number" placeholder="المبلغ المدفوع"
+                <input  id="contract-number" name="desc" type="number" placeholder="المبلغ المدفوع"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -142,7 +142,7 @@
     <div class="w-full py-7 mt-6 flex rtl justify-center items-center gap-5 ">
         <button type="submit"
             class=" bg-indigo-500 text-white rounded-md p-2 px-4 hover:bg-indigo-600 transition-all ease-in-out duration-500">
-            انشاء العقد
+            انشاء الفاتورة
         </button>
     </div>
 </form>
