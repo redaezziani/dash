@@ -76,6 +76,22 @@
             </div>
         </div>
         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
+            <div class="group-input w-1/2 sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
+                <label for="date">
+                  رقم الهوية
+                </label>
+                <input  id="fullprice" name="ident" type="number" placeholder="المبلغ الاجمالي"
+                    class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            </div>
+            <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
+                <label for="contract-number" name=''>
+                  وصف الفاتورة
+                </label>
+                <input  id="contract-number" name="desc" type="number" placeholder="المبلغ المدفوع"
+                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            </div>
+        </div>
+        <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
             <div class="group-input w-[30%] sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
                 <label for="date">
                   المبلغ الاجمالي
@@ -98,22 +114,7 @@
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
-        <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
-            <div class="group-input w-1/2 sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
-                <label for="date">
-                  رقم الهوية
-                </label>
-                <input  id="fullprice" name="ident" type="number" placeholder="المبلغ الاجمالي"
-                    class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
-            </div>
-            <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
-                <label for="contract-number" name=''>
-                  وصف الفاتورة
-                </label>
-                <input  id="contract-number" name="desc" type="number" placeholder="المبلغ المدفوع"
-                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
-            </div>
-        </div>
+
         @for($i = 1; $i <= 9; $i++)
         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
         <div class="group-input md:w-[25%] w-full  flex flex-col gap-1 justify-start items-start rtl">
