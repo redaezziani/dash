@@ -36,7 +36,7 @@
     <!-- end sidebar  -->
 
     <!-- main  -->
-    <form action="{{ route('Store-Facture') }} class=" rounded-md bg-white mt-20 md:w-[90%] p-6 flex flex-col justify-start items-start rtl" method="POST">
+    <form action="{{ route('Store-Facture') }} " class=" rounded-md bg-white mt-20 md:w-[90%] p-6 flex flex-col justify-start items-start rtl" method="POST">
         @csrf
     <div class=" rounded-md bg-white mt-20 md:w-[90%] p-6 flex flex-col justify-start items-start rtl">
         <h1 class="text-gray-700">
