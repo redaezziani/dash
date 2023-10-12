@@ -76,21 +76,21 @@
             </div>
         </div>
         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
-            <div class="group-input w-[30%] sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
+            <div class="group-input w-[25%] sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
                 <label for="date">
                   المبلغ الاجمالي
                 </label>
                 <input required id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
-            <div class="group-input w-[30%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
+            <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   المبلغ المدفوع
                 </label>
                 <input required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
                     class="border border-gray-500  text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
-            <div class="group-input w-[30%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
+            <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   المبلغ المتبقي
                 </label>
