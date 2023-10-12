@@ -328,9 +328,9 @@ $(document).ready(function(){
 
 </script>
 <div class="modal fade" id="edditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
+    <div class="modal-dialog flex justify-center items-center modal-dialog-centered" role="document">
+        <div class="modal-content min-w-[50rem] flex flex-col gap-2 ">
+            <div class="modal-header flex justify-center items-center text-center">
                 <h5 class="modal-title" id="exampleModalLongTitle">التعديل على العقد</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -432,12 +432,14 @@ $(document).ready(function(){
                             class="border border-gray-500 text-start  text-sm rounded-md p-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                     </div>
                 </div>
+                <div class="">
+                <button type="button" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300  bg-slate-300 text-slate-400 " data-dismiss="modal">اغلاق</button>
+                <button type="button" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300 bg-violet-500 text-white">حفظ</button>
             </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
-                <button type="button" class="btn btn-primary">حفظ</button>
+            
             </div>
+            
         </div>
     </div>
 </div>
