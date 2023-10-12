@@ -63,37 +63,14 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
     </div>
 </div>
 <div class=" rounded-md bg-white mt-20 md:w-[90%] p-6 flex flex-col justify-start items-start rtl">
-    <div class=" w-full flex justify-end items-center">
-        <a href="/Add-Contrat">
-        <button
-        class=" bg-violet-600 flex justify-center gap-2 items-center text-white rounded-md px-3 py-1.5 text-sm"
-        >
-        اضافة عقد جديد
-        <i
-        class='bx bx-plus text-white text-xl ml-2'
-        >
 
-        </i>
-        </button>
-        </a>
-    </div>
 
     <div class=" w-full rtl flex flex-col md:flex-row  gap-3 mt-6 items-center">
         <div class="text-group flex justify-start items-center gap-2">
             <p
             class="text-gray-500 text-sm"
             >
-                البحث حسب الاسم العميل او رقم العقد
-            </p>
-            <p
-            class="text-gray-300 text-sm"
-            >
-            اجمالي العقود : 20
-            </p>
-            <p
-            class="text-gray-300 text-sm"
-            >
-            المكتملة : 10
+            اجمالي العقود : {{$count}}
             </p>
         </div>
         <div class="search-group flex justify-start w-[90%]  sm:w-[60%] py-1.5 px-2 items-center gap-2 border border-slate-400 rounded-full">
@@ -107,6 +84,20 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
             class="outline-none bg-transparent text-gray-500 text-sm"
             placeholder="ابحث هنا"
             />
+        </div>
+        <div class=" text-group flex justify-start items-center gap-2">
+            <a href="/Add-Contrat">
+            <button
+            class=" bg-violet-600 flex justify-center gap-2 items-center text-white rounded-md px-3 py-1.5 text-sm"
+            >
+            اضافة عقد جديد
+            <i
+            class='bx bx-plus text-white text-xl ml-2'
+            >
+
+            </i>
+            </button>
+            </a>
         </div>
     </div>
     <table
@@ -223,7 +214,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 <td
                 class="py-2"
                 >
-                <button  class="bg-green-500 text-white rounded-md px-3 py-1.5  text-sm">
+                <button value="{{$item->id}}" class="bg-green-500 view text-white rounded-md px-3 py-1.5  text-sm">
                     عقد
                 </button>
 
@@ -278,75 +269,8 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
 </div>
 
 <!-- end main  -->
-<script>
-    const dropMenu= document.getElementById('drop-menu');
-const userBar= document.getElementById('user-bar');
-
-userBar.addEventListener('click', function(){
-    dropMenu.classList.toggle('active');
-})
-
-
-var sidebar=document.getElementById("sidebar");
-var closeSidebar=document.getElementById("close-sidebar");
-var sidebarMenu=document.getElementById("sidebar-menu");
-
-sidebar.addEventListener("click", function(){
-    sidebarMenu.classList.contains("hidden") ? sidebarMenu.classList.remove("hidden") : sidebarMenu.classList.add("hidden");
-    // lets add animate-slide-right
-
-    if (sidebarMenu.classList.contains("animate-slide-right")) {
-            sidebarMenu.classList.remove("animate-slide-right");
-        } else {
-            sidebarMenu.classList.add("animate-slide-right");
-        }
-})
-
-closeSidebar.addEventListener("click", function(){
-    sidebarMenu.classList.contains("hidden") ? sidebarMenu.classList.remove("hidden") : sidebarMenu.classList.add("hidden");
-    // lets add animate-slide-right
-
-    if (sidebarMenu.classList.contains("animate-slide-right")) {
-           sidebarMenu.classList.remove("animate-slide-right");
-       } else {
-           sidebarMenu.classList.add("animate-slide-right");
-       }
-}
-)
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-});
-$(document).ready(function(){
-    $(document).on('click','.edit',function(){
-        var contrat_id= $(this).val();
-        $('#edditModal').modal('show');
-        $.ajax({
-            type:"GET",
-            url:"/edit-student/"+contrat_id,
-            success: function (response){
-                $('#contrat_id').val(response.data.id);
-                $('#user-name').val(response.data.nom);
-                $('#address').val(response.data.adress);
-                $('#date').val(response.data.date);
-                $('#contract-number').val(response.data.num_contrat);
-                $('#contract_number').val(response.data.num_contrat);
-                $('#fullprice').val(response.data.full_price);
-                $('#done-price').val(response.data.done_price);
-                $('#credit').val(response.data.credit);
-                $('#credit_price').val(response.data.credit_price);
-                $('#project-description').val(response.data.desc);
-                $('#acc').val(response.data.daccord);
-                $('#conditions').val(response.data.condition);
-
-            }
-        })
-    })
-})
-
-
-
-</script>
-@include("modal")
+@include('script')
+@include("modalEdit");
 
 
 </html>

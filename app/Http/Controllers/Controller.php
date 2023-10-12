@@ -14,7 +14,8 @@ class Controller extends BaseController
     function welcome(){
         $sumofprice = Contrat::sum('full_price');
         $sumofcontrat= Contrat::count();
-        return view('welcome')->with('sumofprice',$sumofprice)->with('sumofcontrat',$sumofcontrat);
+        $contrats = Contrat::latest()->take(3)->get();
+        return view('welcome')->with('sumofprice',$sumofprice)->with('sumofcontrat',$sumofcontrat)->with('contrats',$contrats);
     }
     public function store(Request $request)
 
@@ -42,7 +43,8 @@ function Add(){
 }
 function Show(){
     $contrats = Contrat::all();
-    return view('Show')->with('contrats',$contrats);
+    $count = Contrat::count();
+    return view('Show')->with('contrats',$contrats)->with('count',$count);
 }
 function Delete($id){
     $contrat = Contrat::find($id);

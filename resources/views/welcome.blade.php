@@ -133,6 +133,11 @@
                 <th
                 class="py-2"
                 >
+                     المبلغ الاجمالي
+                </th>
+                <th
+                class="py-2"
+                >
                      المبلغ المدفوع
                 </th>
                 <th
@@ -143,7 +148,12 @@
                 <th
                 class="py-2"
                 >
-                      اقسام كل شهر
+                      مع أقساط
+                </th>
+                <th
+                class="py-2"
+                >
+                      اقساط كل شهر
                 </th>
                 <th
                 class="py-2"
@@ -165,49 +175,58 @@
         <tbody
         class="bg-white max-h-[5rem] overflow-hidden text-gray-500 text-sm"
         >
+        @foreach($contrats as $item)
             <tr
             class="border-b border-slate-100"
             >
                 <td
                 class="py-2 truncate"
                 >
-                    احمد محمد
+                    {{ $item->nom }}
                 </td>
                 <td
                 class="py-2 truncate"
                 >
-                    123456
+                    {{ $item->num_contrat }}
+                </td>
+                <td
+                class="py-2 truncate"
+                >
+                    {{ $item->date }}
                 </td>
                 <td
                 class="py-2"
                 >
-                    12/12/2021
+                    {{ $item->full_price }}
                 </td>
                 <td
                 class="py-2"
                 >
-                    1000
+                    {{ $item->done_price }}
                 </td>
                 <td
                 class="py-2"
                 >
-                    1000
+                {{ $item->full_price - $item->done_price}}
                 </td>
                 <td
                 class="py-2"
                 >
-                    100
+                {{ $item->credit }}
                 </td>
                 <td
                 class="py-2"
                 >
-                    <a href="">
-                    <button
-                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
-                    >
-                        عقد
-                    </button>
-                    </a>
+                    {{ $item->credit_price}}
+                </td>
+                <td
+                class="py-2"
+                >
+                <button value="{{$item->id}}" class="bg-green-500 view text-white rounded-md px-3 py-1.5  text-sm">
+                    عقد
+                </button>
+
+
                 </td>
                 <td
                 class="py-2"
@@ -224,14 +243,12 @@
                 class="py-2"
                 >
                     <div class="flex justify-center items-center gap-2">
-                        <a href="">
-                        <button
-                        class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                        <button  value="{{$item->id}}"
+                        class="bg-green-500 edit text-white rounded-md px-3 py-1.5 text-sm"
                         >
                             تعديل
                         </button>
-                        </a>
-                        <a href="">
+                        <a href="/Delete/{{$item->id}}">
                         <button
                         class="bg-red-500 text-white rounded-md px-3 py-1.5 text-sm"
                         >
@@ -241,63 +258,12 @@
                     </div>
                 </td>
             </tr>
-
+        @endforeach
         </tbody>
     </table>
     </div>
-
+</body>
 
     <!-- main  -->
+    @include('script')
 </html>
-<script>
-    const dropMenu = document.getElementById('drop-menu');
-    const userBar = document.getElementById('user-bar');
-
-    userBar.addEventListener('click', function() {
-        dropMenu.classList.toggle('active');
-    })
-
-
-    var sidebar = document.getElementById("sidebar");
-    var closeSidebar = document.getElementById("close-sidebar");
-    var sidebarMenu = document.getElementById("sidebar-menu");
-
-    sidebar.addEventListener("click", function() {
-        sidebarMenu.classList.contains("hidden") ? sidebarMenu.classList.remove("hidden") : sidebarMenu
-            .classList.add("hidden");
-        // lets add animate-slide-right
-
-        if (sidebarMenu.classList.contains("animate-slide-right")) {
-            sidebarMenu.classList.remove("animate-slide-right");
-        } else {
-            sidebarMenu.classList.add("animate-slide-right");
-        }
-    })
-
-    closeSidebar.addEventListener("click", function() {
-        sidebarMenu.classList.contains("hidden") ? sidebarMenu.classList.remove("hidden") : sidebarMenu
-            .classList.add("hidden");
-        // lets add animate-slide-right
-
-       if (sidebarMenu.classList.contains("animate-slide-right")) {
-           sidebarMenu.classList.remove("animate-slide-right");
-       } else {
-           sidebarMenu.classList.add("animate-slide-right");
-       }
-    })
-
-    document.getElementById('yesno').addEventListener('change', function() {
-    var selectedValue = this.value;
-    var label = document.getElementById('label');
-    var input = document.getElementById('credit_price');
-
-    if (selectedValue === 'نعم') {
-        input.style.display = 'block';
-        label.style.display = 'block';
-    } else {
-        label.style.display = 'none';
-        input.style.display = 'none';
-    }
-});
-
-</script>
