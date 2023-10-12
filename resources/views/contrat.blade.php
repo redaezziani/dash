@@ -70,7 +70,8 @@
                 <label for="contract-number">
                     رقم العقد
                 </label>
-                <input  disabled value="{{$count+1}}" id="contract-number"  name='num_contrat' type="text" placeholder=" رقم العقد"
+                <input type="hidden" name="num_contrat" value="{{$count+1}}">
+                <input  disabled value="{{$count+1}}" id="contract-number" type="text" placeholder=" رقم العقد"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -150,7 +151,7 @@
 
     userBar.addEventListener('click', function() {
         dropMenu.classList.toggle('active');
-        
+
     })
 
     var sidebar = document.getElementById("sidebar");
@@ -162,7 +163,7 @@
             .classList.add("hidden ");
 
        // lets add animate-slide-right
-       
+
        if (sidebarMenu.classList.contains("animate-slide-right")) {
            sidebarMenu.classList.remove("animate-slide-right");
        } else {

@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/welcome');
 });
 Route::get('/Add-Contrat', [App\Http\Controllers\Controller::class, 'Add'])->name('Add');
+Route::get('/welcome', [App\Http\Controllers\Controller::class, 'welcome'])->name('Welcome');
 Route::get('/Show', [App\Http\Controllers\Controller::class, 'Show'])->name('Show');
 Route::get('/Delete/{id}', [App\Http\Controllers\Controller::class, 'Delete'])->name('Dlete');
 Route::post('/Store', [App\Http\Controllers\Controller::class, 'store'])->name('Store');

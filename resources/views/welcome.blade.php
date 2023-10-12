@@ -58,7 +58,7 @@
        <p
         class="text-gray-500 text-2xl mt-5 "
         >
-            100 عقد
+            {{$sumofcontrat}} عقود
         </p>
        </div>
     </div>
@@ -90,7 +90,7 @@
        <p
         class="text-gray-500 text-2xl mt-5 "
         >
-            100000 ريال
+            {{$sumofprice}} درهم
         </p>
        </div>
     </div>
@@ -241,12 +241,12 @@
                     </div>
                 </td>
             </tr>
-           
+
         </tbody>
     </table>
     </div>
 
-    
+
     <!-- main  -->
 </html>
 <script>
@@ -278,7 +278,7 @@
         sidebarMenu.classList.contains("hidden") ? sidebarMenu.classList.remove("hidden") : sidebarMenu
             .classList.add("hidden");
         // lets add animate-slide-right
-       
+
        if (sidebarMenu.classList.contains("animate-slide-right")) {
            sidebarMenu.classList.remove("animate-slide-right");
        } else {

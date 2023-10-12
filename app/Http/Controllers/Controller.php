@@ -11,7 +11,13 @@ use Illuminate\Http\Request;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+    function welcome(){
+        $sumofprice = Contrat::sum('full_price');
+        $sumofcontrat= Contrat::count();
+        return view('welcome')->with('sumofprice',$sumofprice)->with('sumofcontrat',$sumofcontrat);
+    }
     public function store(Request $request)
+
 {
     $contrat = new Contrat;
     $contrat->nom = $request->input('nom');
@@ -31,7 +37,7 @@ class Controller extends BaseController
 }
 
 function Add(){
-    $count = Contrat::count();
+    $count = Contrat::max('num_contrat');
     return view('contrat')->with('count',$count);
 }
 function Show(){
