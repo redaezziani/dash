@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('adress')->nullable();
             $table->date('date')->nullable();
             $table->integer('phone')->nullable();
-            $table->integer('full-price')->nullable();
+            $table->integer('full_price')->nullable();
             $table->integer('done_price')->nullable();
             $table->integer('credit_price')->nullable();
             $table->string('ident')->nullable();

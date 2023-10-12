@@ -47,14 +47,14 @@
                 <label for="user-name">
                     اسم العميل
                 </label>
-                <input  id="user-name"  name='nom' type="text" placeholder="اسم العميل"
-                    class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                <input required id="user-name"  name='nom' type="text" placeholder="اسم العميل"
+                class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="address">
                     عنوان العميل
                 </label>
-                <input   id="address" type="text" name='adress' placeholder="عنوان المشروع"
+                <input required id="address" type="text" name='adress' placeholder="عنوان العميل"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -63,15 +63,14 @@
                 <label for="date">
                     تاريخ الفاتورة
                 </label>
-                <input  name='date' id="date" type="date" placeholder=" تاريخ العقد"
+                <input required name='date' id="date" type="date" placeholder=" تاريخ العقد"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number">
                     رقم الهاتف
-                </label>
-                <input type="hidden" name="phone" value="">
-                <input   value="" id="contract-number" type="text" placeholder=" رقم العقد"
+                </label>monsef mop
+                <input required value="" name="phone" id="contract-number" type="text" placeholder=" رقم الهاتف"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -80,14 +79,14 @@
                 <label for="date">
                   رقم الهوية
                 </label>
-                <input  id="fullprice" name="ident" type="number" placeholder="المبلغ الاجمالي"
+                <input  required id="fullprice" name="ident" type="number" placeholder="رقم الهاتف"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   وصف الفاتورة
                 </label>
-                <input  id="contract-number" name="desc" type="number" placeholder="المبلغ المدفوع"
+                <input  required id="contract-number" name="desc" type="text" placeholder="وصف الفاتورة"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
@@ -96,42 +95,42 @@
                 <label for="date">
                   المبلغ الاجمالي
                 </label>
-                <input required id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
+                <input  required id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   المبلغ المدفوع
                 </label>
-                <input required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
+                <input  required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   المبلغ المتبقي
                 </label>
-                <input required id="contract-number" name="credit_price" type="number" placeholder="المبلغ المدفوع"
+                <input  required id="contract-number" name="credit_price" type="number" placeholder="المبلغ المتبقي"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
 
         @for($i = 1; $i <= 9; $i++)
-        <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
-        <div class="group-input md:w-[25%] w-full  flex flex-col gap-1 justify-start items-start rtl">
+        <div class=" flex rtl mt-2   gap-2 w-full md:flex-row flex-col">
+        <div class="group-input md:w-[25%] w-full  flex flex-col gap-2 justify-start items-start rtl">
             <label for="desc_facture_{{ $i }}"> الوصف {{ $i }}</label>
-            <input  id="desc_facture_{{ $i }}" name="desc_facture_{{ $i }}" type="text" placeholder="المبلغ الاجمالي" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            <input  id="desc_facture_{{ $i }}" name="desc_facture_{{ $i }}" type="text" placeholder="الوصف" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
-        <div class="group-input md:w-[25%] flex w-full flex-col gap-1 justify-start items-start rtl">
+        <div class="group-input md:w-[25%] flex w-full flex-col gap-2 justify-start items-start rtl">
             <label for="qte_{{ $i }}"> الكمية {{ $i }}</label>
-            <input  id="qte_{{ $i }}" name="qte_{{ $i }}" type="number" placeholder="المبلغ المدفوع" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            <input  id="qte_{{ $i }}" name="qte_{{ $i }}" type="number" placeholder="الكمية" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
-        <div class="group-input md:w-[25%] flex w-full flex-col gap-1 justify-start items-start rtl">
+        <div class="group-input md:w-[25%] flex w-full flex-col gap-2 justify-start items-start rtl">
             <label for="price_qte_{{ $i }}"> سعر الوحدة {{ $i }}</label>
-            <input  id="price_qte_{{ $i }}" name="price_qte_{{ $i }}" type="number" placeholder="المبلغ المدفوع" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            <input  id="price_qte_{{ $i }}" name="price_qte_{{ $i }}" type="number" placeholder="سعر الوحدة" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
-        <div class="group-input md:w-[25%] flex w-full flex-col gap-1 justify-start items-start rtl">
+        <div class="group-input md:w-[25%] flex w-full flex-col gap-2 justify-start items-start rtl">
             <label for="total_qte_{{ $i }}">  السعر الكلي {{ $i }} </label>
-            <input readonly id="total_qte_{{ $i }}" name="total_qte_{{ $i }}" type="number" placeholder="المبلغ المدفوع" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            <input readonly id="total_qte_{{ $i }}" name="total_qte_{{ $i }}" type="number" placeholder="السعر الكلي" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
     </div>
     @endfor
