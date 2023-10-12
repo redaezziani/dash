@@ -24,5 +24,6 @@ Route::post('/Store', [App\Http\Controllers\Controller::class, 'store'])->name('
 Route::get('/edit-contrat/{id}', [App\Http\Controllers\Controller::class, 'Edit'])->name('Edit');
 Route::post('/updateContart', [App\Http\Controllers\Controller::class, 'Up'])->name('Up');
 Route::get('/Add-Facture', [App\Http\Controllers\Controller::class, 'AddFacture'])->name('AddFacture');
+Route::post('/Store-Facture', [App\Http\Controllers\Controller::class, 'storeFacture'])->name('Store-Facture');
 
 
