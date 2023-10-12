@@ -21,5 +21,7 @@ Route::get('/welcome', [App\Http\Controllers\Controller::class, 'welcome'])->nam
 Route::get('/Show', [App\Http\Controllers\Controller::class, 'Show'])->name('Show');
 Route::get('/Delete/{id}', [App\Http\Controllers\Controller::class, 'Delete'])->name('Dlete');
 Route::post('/Store', [App\Http\Controllers\Controller::class, 'store'])->name('Store');
-Route::get('/get-data/{id}', [App\Http\Controllers\Controller::class, 'getData']);
+Route::get('/edit-student/{id}', [App\Http\Controllers\Controller::class, 'Edit'])->name('Edit');
+Route::post('/updateContart', [App\Http\Controllers\Controller::class, 'Up'])->name('Up');
+
 

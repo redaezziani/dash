@@ -49,9 +49,31 @@ function Delete($id){
     $contrat->delete();
     return redirect()->back()->with('message', 'تم الحدف بنجاح');
 }
-public function getData($id) {
+
+public function Edit($id) {
     $data = Contrat::find($id);
-    return view('Show')->with('data',$data);
+    return response()->json([
+        'status'=>200,
+        'data'=>$data,
+    ]);
 }
 
+function Up(Request $request){
+    $contrat_id = $request->input('contrat_id');
+    $contrat =Contrat::find($contrat_id);
+    $contrat->nom = $request->input('nom');
+    $contrat->adress = $request->input('adress');
+    $contrat->date = $request->input('date');
+    $contrat->num_contrat = $request->input('num_contrat');
+    $contrat->full_price = $request->input('full_price');
+    $contrat->done_price = $request->input('done_price');
+    $contrat->credit = $request->input('credit');
+    $contrat->credit_price = $request->input('credit_price');
+    $contrat->desc = $request->input('desc');
+    $contrat->daccord = $request->input('daccord');
+    $contrat->condition = $request->input('condition');
+    $contrat->update();
+
+    return redirect()->back()->with('message', 'azerty');
+}
 }

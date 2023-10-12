@@ -6,14 +6,13 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>
         </title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
         <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -321,6 +320,25 @@ $(document).ready(function(){
     $(document).on('click','.edit',function(){
         var contrat_id= $(this).val();
         $('#edditModal').modal('show');
+        $.ajax({
+            type:"GET",
+            url:"/edit-student/"+contrat_id,
+            success: function (response){
+                $('#contrat_id').val(response.data.id);
+                $('#user-name').val(response.data.nom);
+                $('#address').val(response.data.adress);
+                $('#date').val(response.data.date);
+                $('#contract-number').val(response.data.num_contrat);
+                $('#fullprice').val(response.data.full_price);
+                $('#done-price').val(response.data.done_price);
+                $('#credit').val(response.data.credit);
+                $('#credit_price').val(response.data.credit_price);
+                $('#project-description').val(response.data.desc);
+                $('#acc').val(response.data.daccord);
+                $('#conditions').val(response.data.condition);
+
+            }
+        })
     })
 })
 
@@ -341,8 +359,11 @@ $(document).ready(function(){
                     <h1 class="text-gray-700">
                         اضافة تفاصيل العقد
                     </h1>
+                    <form action="/updateContart" method="POST">
+                        @csrf
                     <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col ">
                         <div class="group-input w-1/2 sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
+                            <input type="hidden" name="contrat_id" id="contrat_id">
                             <label for="user-name">
                                 اسم العميل
                             </label>
@@ -369,7 +390,8 @@ $(document).ready(function(){
                             <label for="contract-number">
                                 رقم العقد
                             </label>
-                            <input  disabled id="contract-number" type="text" placeholder=" رقم العقد"
+                            <input type="hidden" name="num_contrat" id="contract-number">
+                            <input  disabled type="text" id="contract-number" placeholder=" رقم العقد"
                                 class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div>
                     </div>
@@ -385,7 +407,7 @@ $(document).ready(function(){
                             <label for="contract-number" name=''>
                               المبلغ المدفوع
                             </label>
-                            <input required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
+                            <input required id="done-price" name="done_price" type="number" placeholder="المبلغ المدفوع"
                                 class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div>
                     </div>
@@ -394,18 +416,18 @@ $(document).ready(function(){
                             <label for="contract-number" name=''>
                                 مع أقساط
                               </label>
-                            <select name="credit" class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" name="yesno" id="yesno">
+                            <select id="credit" name="credit" class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" name="yesno" id="yesno">
                                 <option value="" disabled selected>اختر نعم أو لا</option>
                                 <option value="نعم">نعم</option>
                                 <option value="لا">لا</option>
                               </select>
                         </div>
                         <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
-                            <label style="display: none" for="contract-number" name='label' id='label'>
+                            <label  for="contract-number" name='label' id='label'>
                               مبلغ الأقساط
                             </label>
                             <input id="credit_price" name="credit_price" type="number" placeholder="مبلغ الأقساط"
-                                style="display: none" class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div>
                     </div>
                     <div class=" flex rtl mt-2   gap-1 w-full">
@@ -433,13 +455,14 @@ $(document).ready(function(){
                     </div>
                 </div>
                 <div class="">
-                <button type="button" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300  bg-slate-300 text-slate-400 " data-dismiss="modal">اغلاق</button>
-                <button type="button" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300 bg-violet-500 text-white">حفظ</button>
+                    <button type="button" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300  bg-slate-300 text-slate-400 " data-dismiss="modal">اغلاق</button>
+                    <button type="submit" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300 bg-violet-500 text-white">حفظ</button>
+                </form>
             </div>
             </div>
-            
+
             </div>
-            
+
         </div>
     </div>
 </div>
