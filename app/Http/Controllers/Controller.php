@@ -49,4 +49,9 @@ function Delete($id){
     $contrat->delete();
     return redirect()->back()->with('message', 'تم الحدف بنجاح');
 }
+public function getData($id) {
+    $data = Contrat::find($id);
+    return view('Show')->with('data',$data);
+}
+
 }

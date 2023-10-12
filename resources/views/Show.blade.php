@@ -12,6 +12,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
         <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         @vite('resources/css/app.css')
     </head>
@@ -220,11 +224,11 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 <td
                 class="py-2"
                 >
-                    <button data-toggle="modal" data-target="#exampleModalCenter"
-                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
-                    >
-                        عقد
-                    </button>
+                <button  class="bg-green-500 text-white rounded-md px-3 py-1.5  text-sm">
+                    عقد
+                </button>
+
+
                 </td>
                 <td
                 class="py-2"
@@ -241,13 +245,11 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 class="py-2"
                 >
                     <div class="flex justify-center items-center gap-2">
-                        <a href="">
-                        <button
-                        class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
+                        <button  value="{{$item->id}}"
+                        class="bg-green-500 edit text-white rounded-md px-3 py-1.5 text-sm"
                         >
                             تعديل
                         </button>
-                        </a>
                         <a href="/Delete/{{$item->id}}">
                         <button
                         class="bg-red-500 text-white rounded-md px-3 py-1.5 text-sm"
@@ -314,26 +316,38 @@ closeSidebar.addEventListener("click", function(){
 )
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
+});
+$(document).ready(function(){
+    $(document).on('click','.edit',function(){
+        var contrat_id= $(this).val();
+        $('#edditModal').modal('show');
+    })
 })
+
+
+
 </script>
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="edditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>اسم العميل: <span id="modal-nom"></span></p>
+                <p>رقم العقد: <span id="modal-num-contrat"></span></p>
+                <!-- Add more data as needed -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
-        <div class="modal-body">
-            
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+
+
 </html>
