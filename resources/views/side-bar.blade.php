@@ -37,6 +37,12 @@
  <div
      class=' mt-3 flex justify-start w-full items-center hover:text-gray-600 duration-500 transition-all ease-in-out  text-gray-500 '>
      <a href="/Add-Facture">
+         اضافة فاتورة
+     </a>
+ </div>
+ <div
+     class=' mt-3 flex justify-start w-full items-center hover:text-gray-600 duration-500 transition-all ease-in-out  text-gray-500 '>
+     <a href="/Show-facture">
          الفواتير
      </a>
  </div>

@@ -146,4 +146,8 @@ function Up(Request $request){
 
         return redirect()->back()->with('message', 'azerty');
     }
+    function ShowFacture(){
+        $factures=Facture::all();
+        return view('Show_facture')->with('factures', $factures);
+    }
 }
