@@ -120,7 +120,7 @@ $(document).ready(function(){
             url:"/facture-modal/"+facture_id,
             success: function (response){
                 console.log(response);
-                // $('#contrat_id').val(response.data.id);
+                 $('#facture_id').val(response.data.id);
                  $('#user-name').val(response.data.nom);
                  $('#user-name').prop('disabled', true);
                  $('#address').val(response.data.adress);
@@ -156,12 +156,84 @@ $(document).ready(function(){
                     $(`#total_qte_${i}`).val(response.data[`total_qte_${i}`]);
                     $(`#total_qte_${i}`).prop('disabled', true);
                 }
+                $('#submit').prop('disabled', true);
 
             }
         })
     })
 
 })
+$(document).ready(function(){
+    $(document).on('click','.editfacture',function(){
+        var facture_id= $(this).val();
+        $('#factureviewModal').modal('show');
+        $.ajax({
+            type:"GET",
+            url:"/facture-modal/"+facture_id,
+            success: function (response){
+                console.log(response);
+                $('#facture_id').val(response.data.id);
+                 $('#user-name').val(response.data.nom);
+                 $('#user-name').prop('disabled', false);
+                 $('#address').val(response.data.adress);
+                 $('#address').prop('disabled', false);
+                 $('#date').val(response.data.date);
+                 $('#date').prop('disabled', false);
+                 $('#phone').val(response.data.phone);
+                 $('#phone').prop('disabled', false);
+                 $('#ident').val(response.data.ident);
+                 $('#ident').prop('disabled', false);
+                 $('#desc').val(response.data.desc);
+                 $('#desc').prop('disabled', false);
+                 $('#full_price').val(response.data.full_price);
+                 $('#full_price').prop('disabled', false);
+                 $('#done_price').val(response.data.done_price);
+                 $('#done_price').prop('disabled', false);
+                 $('#credit_price').val(response.data.credit_price);
+                 $('#credit_price').prop('disabled', false);
+                 for (let i = 1; i <= 9; i++) {
+                    // Set value and disable #desc_facture_i
+                    $(`#desc_facture_${i}`).val(response.data[`desc_facture_${i}`]);
+                    $(`#desc_facture_${i}`).prop('disabled', false);
+
+                    // Set value and disable #qte_i
+                    $(`#qte_${i}`).val(response.data[`qte_${i}`]);
+                    $(`#qte_${i}`).prop('disabled', false);
+
+                    // Set value and disable #price_qte_i
+                    $(`#price_qte_${i}`).val(response.data[`price_qte_${i}`]);
+                    $(`#price_qte_${i}`).prop('disabled', false);
+
+                    // Set value and disable #total_qte_i
+                    $(`#total_qte_${i}`).val(response.data[`total_qte_${i}`]);
+                    $(`#total_qte_${i}`).prop('disabled', false);
+                }
+                $('#submit').prop('disabled', false);
+
+            }
+        })
+    })
+
+})
+document.addEventListener('DOMContentLoaded', function() {
+    var fullPriceInput = document.getElementById('fullprice');
+    var donePriceInput = document.getElementById('contract-number');
+    var creditPriceInput = document.getElementById('contract-number');
+
+    // Add an event listener to listen for input changes
+    fullPriceInput.addEventListener('input', updateCreditPrice);
+    donePriceInput.addEventListener('input', updateCreditPrice);
+
+    function updateCreditPrice() {
+        var fullPrice = parseFloat(fullPriceInput.value);
+        var donePrice = parseFloat(donePriceInput.value);
+
+        if (!isNaN(fullPrice) && !isNaN(donePrice)) {
+            var creditPrice = fullPrice - donePrice;
+            creditPriceInput.value = creditPrice;
+        }
+    }
+});
 
 
 </script>

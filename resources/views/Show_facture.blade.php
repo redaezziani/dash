@@ -226,11 +226,11 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 >
                     <div class="flex justify-center items-center gap-2">
                         <button  value="{{$item->id}}"
-                        class="bg-green-500 edit text-white rounded-md px-3 py-1.5 text-sm"
+                        class="bg-green-500 editfacture text-white rounded-md px-3 py-1.5 text-sm"
                         >
                             تعديل
                         </button>
-                        <a href="/Delete/{{$item->id}}">
+                        <a href="/DeleteFacture/{{$item->id}}">
                         <button
                         class="bg-red-500 text-white rounded-md px-3 py-1.5 text-sm"
                         >

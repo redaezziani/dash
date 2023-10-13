@@ -9,11 +9,12 @@
             </div>
             <div class="modal-body">
                 <div class=" rounded-md bg-white md:w-[90%] p-6 flex flex-col justify-start items-start rtl">
-                    <form action="{{ route('Store-Facture') }} " class=" rounded-md bg-white md:w-[90%]  flex flex-col justify-start items-start rtl" method="POST">
+                    <form action="{{ route('updateFacture') }} " class=" rounded-md bg-white md:w-[90%]  flex flex-col justify-start items-start rtl" method="POST">
                         @csrf
                     <div class=" rounded-md bg-white md:w-[90%] p-6 flex flex-col justify-start items-start rtl">
                         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col ">
                             <div class="group-input w-1/2 sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
+                            <input type="hidden" name="facture_id" id="facture_id">
                                 <label for="user-name">
                                     اسم العميل
                                 </label>

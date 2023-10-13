@@ -109,7 +109,7 @@
                 <label for="contract-number" name=''>
                   المبلغ المتبقي
                 </label>
-                <input  required id="contract-number" name="credit_price" type="number" placeholder="المبلغ المتبقي"
+                <input  id="contract-number" name="credit_price" type="number" placeholder="المبلغ المتبقي"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
