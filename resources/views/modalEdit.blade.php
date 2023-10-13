@@ -2,7 +2,6 @@
     <div class="modal-dialog flex justify-center items-center modal-dialog-centered" role="document">
         <div class="modal-content min-w-[50rem] flex flex-col gap-2 ">
             <div class="modal-header flex  justify-center items-center text-center">
-                <h5 class="modal-title" id="exampleModalLongTitle">العقد</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
