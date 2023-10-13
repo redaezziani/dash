@@ -79,7 +79,7 @@
                 <label for="date">
                   رقم الهوية
                 </label>
-                <input  required id="fullprice" name="ident" type="number" placeholder="رقم الهاتف"
+                <input  required id="" name="ident" type="number" placeholder="رقم الهاتف"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
@@ -90,28 +90,32 @@
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
         </div>
-        <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
-            <div class="group-input w-[25%] sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
+        <div class="flex rtl mt-2 gap-1 w-full md:flex-row flex-col">
+            <div class="group-input w-[25%] sm:w-full flex flex-col gap-2 justify-start items-start rtl">
                 <label for="date">
-                  المبلغ الاجمالي
+                    المبلغ الاجمالي
                 </label>
-                <input value="0" required id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
-                    class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                <input value="0" onchange="calculateRemaining()" required id="fullprice" name="full_price" type="number"
+                    placeholder="المبلغ الاجمالي"
+                    class="border border-gray-500 text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
-                  المبلغ المدفوع
+                    المبلغ المدفوع
                 </label>
-                <input value="0" required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
-                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                <input value="0" onchange="calculateRemaining()" required id="done" name="done_price" type="number"
+                    placeholder="المبلغ المدفوع"
+                    class="border border-gray-500 text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
-                  المبلغ المتبقي
+                    المبلغ المتبقي
                 </label>
-                <input  id="contract-number" name="credit_price" type="number" placeholder="المبلغ المتبقي"
-                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                <input readonly id="require" name="credit_price" type="number" placeholder="المبلغ المتبقي"
+                    class="border border-gray-500 text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
+        </div>
+
         </div>
 
         @for($i = 1; $i <= 9; $i++)
@@ -199,9 +203,13 @@
         input.style.display = 'none';
     }
 });
-function getcreditprice(){
-
-}
-
+function calculateRemaining() {
+        var fullPrice = parseFloat(document.getElementById('fullprice').value) || 0;
+        var donePrice = parseFloat(document.getElementById('done').value) || 0;
+        console.log(fullPrice);
+        console.log(donePrice);
+        var remaining = fullPrice - donePrice;
+        document.getElementById('require').value = remaining;
+    }
 
 </script>
