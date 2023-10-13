@@ -111,6 +111,15 @@ body{
     width: 180px;
 }
 
+.group .text-content .list .group-sign p.text{
+    font-size: .7rem;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
     </style>
 </head>
 <body>
@@ -169,8 +178,12 @@ body{
                 </h3>
                 <div class="group-sign">
                    <img src="./WhatsApp Image 2023-10-13 at 5.41.22 PM.jpeg" alt="./">
-                   <p>
-                          اسم العميل
+                   <p
+                   class="text"
+                   >
+                          السيد / اسم العميل <br>
+                            التوقيع : .............................
+                        
                    </p>
                 </div>
             </div>
