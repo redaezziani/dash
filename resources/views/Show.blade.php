@@ -155,8 +155,8 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 <th
                 class="py-2"
                 >
-                     فاتورة
-                </th>
+                 تحميل
+                 </th>
                 <th
                 class="py-2"
                 >
@@ -254,6 +254,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
         </tbody>
     </table>
 
+    <img src="{{ asset('images/header.jpg') }}" alt="">
 </div>
 
 <div class="w-full flex justify-center items-center mt-4">
