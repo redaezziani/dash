@@ -127,22 +127,35 @@ $(document).ready(function(){
                  $('#address').prop('disabled', true);
                  $('#date').val(response.data.date);
                  $('#date').prop('disabled', true);
-                // $('#contract-number').val(response.data.num_contrat);
-                // $('#contract_number').val(response.data.num_contrat);
-                // $('#fullprice').val(response.data.full_price);
-                // $('#fullprice').prop('disabled', true);
-                // $('#done-price').val(response.data.done_price);
-                // $('#done-price').prop('disabled', true);
-                // $('#credit').val(response.data.credit);
-                // $('#credit').prop('disabled', true);
-                // $('#credit_price').val(response.data.credit_price);
-                // $('#credit_price').prop('disabled', true);
-                // $('#project-description').val(response.data.desc);
-                // $('#project-description').prop('disabled', true);
-                // $('#acc').val(response.data.daccord);
-                // $('#acc').prop('disabled', true);
-                // $('#conditions').val(response.data.condition);
-                // $('#conditions').prop('disabled', true);
+                 $('#phone').val(response.data.phone);
+                 $('#phone').prop('disabled', true);
+                 $('#ident').val(response.data.ident);
+                 $('#ident').prop('disabled', true);
+                 $('#desc').val(response.data.desc);
+                 $('#desc').prop('disabled', true);
+                 $('#full_price').val(response.data.full_price);
+                 $('#full_price').prop('disabled', true);
+                 $('#done_price').val(response.data.done_price);
+                 $('#done_price').prop('disabled', true);
+                 $('#credit_price').val(response.data.credit_price);
+                 $('#credit_price').prop('disabled', true);
+                 for (let i = 1; i <= 9; i++) {
+                    // Set value and disable #desc_facture_i
+                    $(`#desc_facture_${i}`).val(response.data[`desc_facture_${i}`]);
+                    $(`#desc_facture_${i}`).prop('disabled', true);
+
+                    // Set value and disable #qte_i
+                    $(`#qte_${i}`).val(response.data[`qte_${i}`]);
+                    $(`#qte_${i}`).prop('disabled', true);
+
+                    // Set value and disable #price_qte_i
+                    $(`#price_qte_${i}`).val(response.data[`price_qte_${i}`]);
+                    $(`#price_qte_${i}`).prop('disabled', true);
+
+                    // Set value and disable #total_qte_i
+                    $(`#total_qte_${i}`).val(response.data[`total_qte_${i}`]);
+                    $(`#total_qte_${i}`).prop('disabled', true);
+                }
 
             }
         })

@@ -40,7 +40,7 @@
                                 <label for="contract-number">
                                     رقم الهاتف
                                 </label>
-                                <input required value="" name="phone" id="contract-number" type="text" placeholder=" رقم الهاتف"
+                                <input required value="" name="phone" id="phone" type="text" placeholder=" رقم الهاتف"
                                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
                         </div>
@@ -49,14 +49,14 @@
                                 <label for="date">
                                   رقم الهوية
                                 </label>
-                                <input  required id="fullprice" name="ident" type="number" placeholder="رقم الهاتف"
+                                <input  required name="ident" id="ident" type="number" placeholder="رقم الهاتف"
                                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
                             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                                 <label for="contract-number" name=''>
                                   وصف الفاتورة
                                 </label>
-                                <input  required id="contract-number" name="desc" type="text" placeholder="وصف الفاتورة"
+                                <input  required id="desc" name="desc" type="text" placeholder="وصف الفاتورة"
                                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
                         </div>
@@ -65,21 +65,21 @@
                                 <label for="date">
                                   المبلغ الاجمالي
                                 </label>
-                                <input  required id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
+                                <input  required id="full_price" name="full_price" type="number" placeholder="المبلغ الاجمالي"
                                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
                             <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                                 <label for="contract-number" name=''>
                                   المبلغ المدفوع
                                 </label>
-                                <input  required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
+                                <input  required id="done_price" name="done_price" type="number" placeholder="المبلغ المدفوع"
                                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
                             <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                                 <label for="contract-number" name=''>
                                   المبلغ المتبقي
                                 </label>
-                                <input  required id="contract-number" name="credit_price" type="number" placeholder="المبلغ المتبقي"
+                                <input  required id="credit_price" name="credit_price" type="number" placeholder="المبلغ المتبقي"
                                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                     </div>
                     <div class="">
                         <button type="button" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300  bg-slate-300 text-slate-400 " data-dismiss="modal">اغلاق</button>
-                        <button type="submit" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300 bg-violet-500 text-white">حفظ</button>
+                        <button type="submit" id="submit" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300 bg-violet-500 text-white">حفظ</button>
                     </form>
             </div>
             </div>
