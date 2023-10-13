@@ -1,6 +1,6 @@
 <div class="modal fade" id="factureviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
     <div class="modal-dialog flex justify-center items-center modal-dialog-centered" role="document">
-        <div class="modal-content min-w-[50rem] flex flex-col gap-2 ">
+        <div class="modal-content w-full md:min-w-[60rem] flex flex-col gap-2 ">
             <div class="modal-header flex  justify-center items-center text-center">
                 <h5 class="modal-title" id="exampleModalLongTitle">الفاتورة</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -14,35 +14,34 @@
                     <div class=" rounded-md bg-white md:w-[90%] p-6 flex flex-col justify-start items-start rtl">
                         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col ">
                             <div class="group-input w-1/2 sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
-                            <input type="hidden" name="facture_id" id="facture_id">
                                 <label for="user-name">
                                     اسم العميل
                                 </label>
                                 <input required id="user-name"  name='nom' type="text" placeholder="اسم العميل"
                                 class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
-                            <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
+                            <div class="group-input w-[27%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                                 <label for="address">
                                     عنوان العميل
                                 </label>
                                 <input required id="address" type="text" name='adress' placeholder="عنوان العميل"
-                                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                                    class="border border-gray-500  text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
                         </div>
                         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
-                            <div class="group-input w-1/2 sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
+                            <div class="group-input w-[27%] sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
                                 <label for="date">
                                     تاريخ الفاتورة
                                 </label>
                                 <input required name='date' id="date" type="date" placeholder=" تاريخ العقد"
-                                    class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                                    class="border border-gray-500  text-sm  rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
                             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                                 <label for="contract-number">
                                     رقم الهاتف
                                 </label>
                                 <input required value="" name="phone" id="phone" type="text" placeholder=" رقم الهاتف"
-                                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                                    class="border border-gray-500  text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
                         </div>
                         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
@@ -62,26 +61,26 @@
                             </div>
                         </div>
                         <div class=" flex rtl mt-2   gap-1 w-full md:flex-row flex-col">
-                            <div class="group-input w-[25%] sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
+                            <div class="group-input w-[28%] sm:w-full  flex flex-col gap-2 justify-start items-start rtl">
                                 <label for="date">
                                   المبلغ الاجمالي
                                 </label>
                                 <input  required id="full_price" name="full_price" type="number" placeholder="المبلغ الاجمالي"
-                                    class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                                    class="border border-gray-500  text-sm  rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
-                            <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
+                            <div class="group-input w-[28%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                                 <label for="contract-number" name=''>
                                   المبلغ المدفوع
                                 </label>
                                 <input  required id="done_price" name="done_price" type="number" placeholder="المبلغ المدفوع"
-                                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                                    class="border border-gray-500  text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
-                            <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
+                            <div class="group-input w-[28%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                                 <label for="contract-number" name=''>
                                   المبلغ المتبقي
                                 </label>
                                 <input  required id="credit_price" name="credit_price" type="number" placeholder="المبلغ المتبقي"
-                                    class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                                    class="border border-gray-500  text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
                             </div>
                         </div>
 
