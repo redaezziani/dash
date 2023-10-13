@@ -95,14 +95,14 @@
                 <label for="date">
                   المبلغ الاجمالي
                 </label>
-                <input  required id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
+                <input value="0" required id="fullprice" name="full_price" type="number" placeholder="المبلغ الاجمالي"
                     class="border border-gray-500  text-sm  rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number" name=''>
                   المبلغ المدفوع
                 </label>
-                <input  required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
+                <input value="0" required id="contract-number" name="done_price" type="number" placeholder="المبلغ المدفوع"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
             <div class="group-input w-[25%] flex sm:w-full flex-col gap-2 justify-start items-start rtl">
@@ -199,5 +199,9 @@
         input.style.display = 'none';
     }
 });
+function getcreditprice(){
+
+}
+
 
 </script>

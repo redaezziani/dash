@@ -215,25 +215,5 @@ $(document).ready(function(){
     })
 
 })
-document.addEventListener('DOMContentLoaded', function() {
-    var fullPriceInput = document.getElementById('fullprice');
-    var donePriceInput = document.getElementById('contract-number');
-    var creditPriceInput = document.getElementById('contract-number');
-
-    // Add an event listener to listen for input changes
-    fullPriceInput.addEventListener('input', updateCreditPrice);
-    donePriceInput.addEventListener('input', updateCreditPrice);
-
-    function updateCreditPrice() {
-        var fullPrice = parseFloat(fullPriceInput.value);
-        var donePrice = parseFloat(donePriceInput.value);
-
-        if (!isNaN(fullPrice) && !isNaN(donePrice)) {
-            var creditPrice = fullPrice - donePrice;
-            creditPriceInput.value = creditPrice;
-        }
-    }
-});
-
 
 </script>
