@@ -22,7 +22,7 @@ Route::get('/Show', [App\Http\Controllers\Controller::class, 'Show'])->name('Sho
 Route::get('/Delete/{id}', [App\Http\Controllers\Controller::class, 'Delete'])->name('Dlete');
 Route::post('/Store', [App\Http\Controllers\Controller::class, 'store'])->name('Store');
 Route::get('/edit-contrat/{id}', [App\Http\Controllers\Controller::class, 'Edit'])->name('Edit');
-Route::get('/facture-modal/{id}', [App\Http\Controllers\Controller::class, 'facturemodal'])->name('Edit');
+Route::get('/facture-modal/{id}', [App\Http\Controllers\Controller::class, 'facturemodal'])->name('facture-modal');
 Route::post('/updateContart', [App\Http\Controllers\Controller::class, 'Up'])->name('Up');
 Route::get('/Add-Facture', [App\Http\Controllers\Controller::class, 'AddFacture'])->name('AddFacture');
 Route::post('/Store-Facture', [App\Http\Controllers\Controller::class, 'storeFacture'])->name('Store-Facture');

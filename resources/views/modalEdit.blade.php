@@ -109,7 +109,7 @@
                 </div>
                 <div class="">
                     <button type="button" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300  bg-slate-300 text-slate-400 " data-dismiss="modal">اغلاق</button>
-                    <button type="submit" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300 bg-violet-500 text-white">حفظ</button>
+                    <button type="submit" id="submit" class=" px-5 min-w-[5rem] py-2 rounded-lg transition-all ease-in duration-300 bg-violet-500 text-white">حفظ</button>
                 </form>
             </div>
             </div>

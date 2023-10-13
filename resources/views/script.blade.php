@@ -68,6 +68,7 @@ $(document).ready(function(){
                 $('#acc').prop('disabled', false);
                 $('#conditions').val(response.data.condition);
                 $('#conditions').prop('disabled', false);
+                $('#submit').prop('disabled', false);
 
             }
         })
@@ -104,6 +105,7 @@ $(document).ready(function(){
                 $('#acc').prop('disabled', true);
                 $('#conditions').val(response.data.condition);
                 $('#conditions').prop('disabled', true);
+                $('#submit').prop('disabled', true);
 
             }
         })
@@ -119,28 +121,28 @@ $(document).ready(function(){
             success: function (response){
                 console.log(response);
                 // $('#contrat_id').val(response.data.id);
-                // $('#user-name').val(response.data.nom);
-                // $('#user-name').prop('disabled', false);
-                // $('#address').val(response.data.adress);
-                // $('#address').prop('disabled', false);
-                // $('#date').val(response.data.date);
-                // $('#date').prop('disabled', false);
+                 $('#user-name').val(response.data.nom);
+                 $('#user-name').prop('disabled', true);
+                 $('#address').val(response.data.adress);
+                 $('#address').prop('disabled', true);
+                 $('#date').val(response.data.date);
+                 $('#date').prop('disabled', true);
                 // $('#contract-number').val(response.data.num_contrat);
                 // $('#contract_number').val(response.data.num_contrat);
                 // $('#fullprice').val(response.data.full_price);
-                // $('#fullprice').prop('disabled', false);
+                // $('#fullprice').prop('disabled', true);
                 // $('#done-price').val(response.data.done_price);
-                // $('#done-price').prop('disabled', false);
+                // $('#done-price').prop('disabled', true);
                 // $('#credit').val(response.data.credit);
-                // $('#credit').prop('disabled', false);
+                // $('#credit').prop('disabled', true);
                 // $('#credit_price').val(response.data.credit_price);
-                // $('#credit_price').prop('disabled', false);
+                // $('#credit_price').prop('disabled', true);
                 // $('#project-description').val(response.data.desc);
-                // $('#project-description').prop('disabled', false);
+                // $('#project-description').prop('disabled', true);
                 // $('#acc').val(response.data.daccord);
-                // $('#acc').prop('disabled', false);
+                // $('#acc').prop('disabled', true);
                 // $('#conditions').val(response.data.condition);
-                // $('#conditions').prop('disabled', false);
+                // $('#conditions').prop('disabled', true);
 
             }
         })

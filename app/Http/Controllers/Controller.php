@@ -60,6 +60,13 @@ public function Edit($id) {
         'data'=>$data,
     ]);
 }
+public function facturemodal($id) {
+    $data = Facture::find($id);
+    return response()->json([
+        'status'=>200,
+        'data'=>$data,
+    ]);
+}
 
 function Up(Request $request){
     $contrat_id = $request->input('contrat_id');
