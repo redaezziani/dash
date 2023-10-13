@@ -181,11 +181,6 @@
                 <th
                 class="py-2"
                 >
-                     فاتورة
-                </th>
-                <th
-                class="py-2"
-                >
                     الخيارات
                 </th>
             </tr>
@@ -245,17 +240,6 @@
                 </button>
 
 
-                </td>
-                <td
-                class="py-2"
-                >
-                    <a href="">
-                    <button
-                    class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
-                    >
-                        فاتورة
-                    </button>
-                    </a>
                 </td>
                 <td
                 class="py-2"
