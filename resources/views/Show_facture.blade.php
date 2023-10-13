@@ -70,7 +70,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
             <p
             class="text-gray-500 text-sm"
             >
-            اجمالي العقود :
+            اجمالي الفاواتير :
             </p>
         </div>
         <div class="search-group flex justify-start w-[90%]  sm:w-[60%] py-1.5 px-2 items-center gap-2 border border-slate-400 rounded-full">
@@ -90,7 +90,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
             <button
             class=" bg-violet-600 flex justify-center gap-2 items-center text-white rounded-md px-3 py-1.5 text-sm"
             >
-            اضافة عقد جديد
+            اضافة فاتورة جديدة
             <i
             class='bx bx-plus text-white text-xl ml-2'
             >
@@ -145,12 +145,12 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 <th
                 class="py-2"
                 >
-                     عقد
+                     الفاتورة
                 </th>
                 <th
                 class="py-2"
                 >
-                     فاتورة
+                     تحميل
                 </th>
                 <th
                 class="py-2"
@@ -204,8 +204,8 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 <td
                 class="py-2"
                 >
-                <button value="{{$item->id}}" class="bg-green-500 view text-white rounded-md px-3 py-1.5  text-sm">
-                    عقد
+                <button value="{{$item->id}}" class="bg-green-500 viewfacture text-white rounded-md px-3 py-1.5  text-sm">
+                    مشاهدة
                 </button>
 
 
@@ -217,7 +217,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                     <button
                     class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
                     >
-                        فاتورة
+                        تحميل
                     </button>
                     </a>
                 </td>
@@ -260,7 +260,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
 
 <!-- end main  -->
 @include('script')
-@include("modalEdit");
+@include('facturemodal');
 
 
 </html>

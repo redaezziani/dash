@@ -109,9 +109,44 @@ $(document).ready(function(){
         })
     })
 })
+$(document).ready(function(){
+    $(document).on('click','.viewfacture',function(){
+        var facture_id= $(this).val();
+        $('#factureviewModal').modal('show');
+        $.ajax({
+            type:"GET",
+            url:"/facture-modal/"+facture_id,
+            success: function (response){
+                console.log(response);
+                // $('#contrat_id').val(response.data.id);
+                // $('#user-name').val(response.data.nom);
+                // $('#user-name').prop('disabled', false);
+                // $('#address').val(response.data.adress);
+                // $('#address').prop('disabled', false);
+                // $('#date').val(response.data.date);
+                // $('#date').prop('disabled', false);
+                // $('#contract-number').val(response.data.num_contrat);
+                // $('#contract_number').val(response.data.num_contrat);
+                // $('#fullprice').val(response.data.full_price);
+                // $('#fullprice').prop('disabled', false);
+                // $('#done-price').val(response.data.done_price);
+                // $('#done-price').prop('disabled', false);
+                // $('#credit').val(response.data.credit);
+                // $('#credit').prop('disabled', false);
+                // $('#credit_price').val(response.data.credit_price);
+                // $('#credit_price').prop('disabled', false);
+                // $('#project-description').val(response.data.desc);
+                // $('#project-description').prop('disabled', false);
+                // $('#acc').val(response.data.daccord);
+                // $('#acc').prop('disabled', false);
+                // $('#conditions').val(response.data.condition);
+                // $('#conditions').prop('disabled', false);
 
+            }
+        })
+    })
 
-
+})
 
 
 </script>

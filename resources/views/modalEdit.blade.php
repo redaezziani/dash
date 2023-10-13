@@ -1,8 +1,8 @@
 <div class="modal fade" id="edditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
     <div class="modal-dialog flex justify-center items-center modal-dialog-centered" role="document">
         <div class="modal-content min-w-[50rem] flex flex-col gap-2 ">
-            <div class="modal-header flex justify-center items-center text-center">
-                <h5 class="modal-title" id="exampleModalLongTitle">التعديل على العقد</h5>
+            <div class="modal-header flex  justify-center items-center text-center">
+                <h5 class="modal-title" id="exampleModalLongTitle">العقد</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -10,7 +10,7 @@
             <div class="modal-body">
                 <div class=" rounded-md bg-white md:w-[90%] p-6 flex flex-col justify-start items-start rtl">
                     <h1 class="text-gray-700">
-                        اضافة تفاصيل العقد
+                         تفاصيل العقد
                     </h1>
                     <form action="/updateContart" method="POST">
                         @csrf
