@@ -155,8 +155,8 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 <th
                 class="py-2"
                 >
-                     فاتورة
-                </th>
+                 تحميل
+                 </th>
                 <th
                 class="py-2"
                 >
@@ -223,11 +223,11 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 <td
                 class="py-2"
                 >
-                    <a href="">
+                    <a href="/PDFContrat/{{$item->id}}">
                     <button
                     class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
                     >
-                        فاتورة
+                        تحميل
                     </button>
                     </a>
                 </td>
@@ -254,6 +254,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
         </tbody>
     </table>
 
+    <img src="{{ asset('images/header.jpg') }}" alt="">
 </div>
 
 <div class="w-full flex justify-center items-center mt-4">
