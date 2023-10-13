@@ -86,7 +86,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
             />
         </div>
         <div class=" text-group flex justify-start items-center gap-2">
-            <a href="/Store-Facture">
+            <a href="/Add-Facture">
             <button
             class=" bg-violet-600 flex justify-center gap-2 items-center text-white rounded-md px-3 py-1.5 text-sm"
             >

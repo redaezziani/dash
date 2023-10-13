@@ -69,7 +69,7 @@
             <div class="group-input w-1/2 flex sm:w-full flex-col gap-2 justify-start items-start rtl">
                 <label for="contract-number">
                     رقم الهاتف
-                </label>monsef mop
+                </label>
                 <input required value="" name="phone" id="contract-number" type="text" placeholder=" رقم الهاتف"
                     class="border border-gray-500  text-sm rounded-md p-2 w-72 focus:outline-none focus:ring-2 focus:ring-gray-200" />
             </div>
