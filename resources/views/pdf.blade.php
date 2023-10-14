@@ -1,195 +1,205 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>A simple, clean, and responsive HTML invoice template</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        page
+    </title>
+    <style>
 
-		<style>
-            @page {
-                    header: page-header;
-                    footer: page-footer;
-                  }
-            body{
-                font-family: 'XBRiyaz',sans-serif;
-            }
-			.invoice-box {
-				max-width: 800px;
-				margin: auto;
-				padding: 30px;
-				font-size: 16px;
-				line-height: 24px;
-                font-family: 'XBRiyaz',sans-serif;
-				color: #555;
-			}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap');
 
-			.invoice-box table {
-				width: 100%;
-				line-height: inherit;
-				text-align: left;
-			}
+*,*::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-			.invoice-box table td {
-				padding: 5px;
-				vertical-align: top;
-			}
 
-			.invoice-box table tr td:nth-child(2) {
-				text-align: right;
-			}
+body{
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    overflow-x: hidden;
+}
 
-			.invoice-box table tr.top table td {
-				padding-bottom: 20px;
-			}
+.group{
+    padding:30px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+    text-align: right;
+    width: 700px;
+    min-height: 880px;
+    padding: 20px;
 
-			.invoice-box table tr.top table td.title {
-				font-size: 45px;
-				line-height: 45px;
-				color: #333;
-			}
+}
 
-			.invoice-box table tr.information table td {
-				padding-bottom: 40px;
-			}
+.group img.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
 
-			.invoice-box table tr.heading td {
-				background: #eee;
-				border-bottom: 1px solid #ddd;
-				font-weight: bold;
-			}
+.group .text-content{
+    font-size: .7rem;
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    flex-direction: column;
+    align-items: start;
+    z-index: 2;
+    gap: 10px;
+}
+.group .text-content p{
+    font-size: .6rem;
+    font-weight: 900;
+    color: #fff;
+}
 
-			.invoice-box table tr.details td {
-				padding-bottom: 20px;
-			}
+.group .text-content p.red{
+    color: #ff0000;
+}
 
-			.invoice-box table tr.item td {
-				border-bottom: 1px solid #eee;
-			}
+.group .text-content span.text{
+    color: #000000;
+}
+.group .text-content .list{
+    z-index: 2;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.group .text-content .title{
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}
+.group .text-content .list .red{
+    color: #ff0000;
+}
+.group .text-content .list h3{
+    font-size: .6rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    background-color: #000000;
+}
+.group .text-content .list .group-sign{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.group .text-content .list .group-sign img{
+    width: 180px;
+}
 
-			.invoice-box table tr.item.last td {
-				border-bottom: none;
-			}
+.group .text-content .list .group-sign p.text{
+    font-size: .6rem;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+}
 
-			.invoice-box table tr.total td:nth-child(2) {
-				border-top: 2px solid #eee;
-				font-weight: bold;
-			}
+    </style>
+</head>
+<body>
+    <div class="group">
+        <img alt="test" class="bg" src="{{asset('images/header.jpg')}}">
+        <div class="text-content">
+            <div
+            class="title " style="margin-top:160px;"
+            >
+                <h3>
+                    اتفاقية تصميم مواقع الكترونية
+                </h3>
+            </div>
+            <p
+            class="red"
+            >
+                الطرف الاول شركة :خط الاحتراف لتصميم مواقع الشبكة المعلوماتية سجل تجاري رقم / 889765 مقرها : دولة الامارات العربية المتحدة خط الاحتراف : <span class="text">اتفق كل من السيد / اسم العميل ، على ان تقوم شراكتنا بتقديم خدماتنا و العمل على بدء تشغيلها وفقا للقواعد و الاشتراطات المحلية و الدولية المعمول بها في هذا المجال و رغبة منه فتتكلف شركتنا ادارة المواقع الالكترونية على منصة شوبيفاي و مدتها 30 يوم من تاريخ العقد و يتم ذكر كل التفاصيل في المتفق عليه و لا تتحمل اي تكاليف اضافات في منصة شوبيفاي ذلك على الانترنت له وفق القواعد المعمول بها في هذا الشئن ،</span> و لا تتحمل الشركة اي مسؤولية تجاهرحقوق الغير في اي من المتطلبات ان كان ، فقد اتفقا و هما في كامل اهليتهما القانونية على الالتزام بمواعيد التسليم و جودة العمل من شركتنا و على<span class="text">السيد / اسم العميل  ، </span>تسليم التفاصيل المطلوبة و الدفعة المالية المحددة و يبدء تنفيذ العمل فورا توقيع على العقد حيث غير ممكن الغاء العقد الا بموافقة الطرفين.
+            </p>
+            <div class="list">
 
-			@media only screen and (max-width: 600px) {
-				.invoice-box table tr.top table td {
-					width: 100%;
-					display: block;
-					text-align: center;
-				}
 
-				.invoice-box table tr.information table td {
-					width: 100%;
-					display: block;
-					text-align: center;
-				}
-			}
+                <p
+                class="red"
+                >
+                    يتم توفير المتفق عليه كالتالي:
+                </p>
 
-			/** RTL **/
-			.invoice-box.rtl {
-				direction: rtl;
-                font-family: 'XBRiyaz',sans-serif;
-			}
 
-			.invoice-box.rtl table {
-				text-align: right;
-			}
+                <ul>
+                    <li>
+                        {{$data->daccord}}
+                    </li>
+                </ul>
+            </div>
+            <div class="list">
+                <h3>
+                    التكلفة و مدة التنفيذ و الشروط
+                </h3>
+                <ul>
+                    <li>
+                        تكلفة {{$data->full_price}} درهم امراتي
+                    </li>
+                    @if (!$data->credit)
+                    <li>
+                        بدون اشتراك شهري او سنوي لدى شركتنا
+                    </li>
+                    @else
+                    <li>
+                        مع اشتراك شهري او سنوي لدى شركتنا
+                    </li>
+                    @endif
+                    <li>
+                        اي اضافة يكون عليها رسوم على صاحب الموقع بالكامل
+                    </li>
+                    <li>
+                        ملاحظة الدفع : لا مانع من تحويل المبلغ على الحساب / سعود النحاس بصفته الادارية و المبيعات بشركة
+                    </li>
+                    <li>
+                        ملاحظة الدفع: لا مانع من الدفع عبر حساب الشركة عبر رابط قصير
+                    </li>
+                </ul>
+            </div>
+            <div class="list">
+                <h3>
+                    التوقيعات الرسمية
+                </h3>
+                <div class="group-sign">
+                   <img src="./WhatsApp Image 2023-10-13 at 5.41.22 PM.jpeg" alt="./">
+                   <p
+                   class="text"
+                   >
+                          السيد / اسم العميل <br>
+                            التوقيع : .............................
 
-			.invoice-box.rtl table tr td:nth-child(2) {
-				text-align: left;
-			}
-		</style>
-	</head>
+                   </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
-	<body>
-		<div class="invoice-box">
-			<table cellpadding="0" cellspacing="0">
-				<tr class="top">
-					<td colspan="2">
-						<table>
-							<tr>
-								<td class="title">
-									<img
-										src="https://sparksuite.github.io/simple-html-invoice-template/images/logo.png"
-										style="width: 100%; max-width: 300px"
-									/>
-								</td>
-
-								<td>
-									Invoice #: 123<br />
-									Created: January 1, 2023<br />
-									Due: February 1, 2023
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-
-				<tr class="information">
-					<td colspan="2">
-						<table>
-							<tr>
-								<td>
-									Sparksuite, Inc.<br />
-									12345 Sunny Road<br />
-									Sunnyville, CA 12345
-								</td>
-
-								<td>
-									Acme Corp.<br />
-									John Doe<br />
-									john@example.com
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-
-				<tr class="heading">
-					<td>Payment Method</td>
-
-					<td>Check #</td>
-				</tr>
-
-				<tr class="details">
-					<td>Check</td>
-
-					<td>1000</td>
-				</tr>
-
-				<tr class="heading">
-					<td>Item</td>
-
-					<td>Price</td>
-				</tr>
-
-				<tr class="item">
-					<td>Website design</td>
-
-					<td>$300.00</td>
-				</tr>
-
-				<tr class="item">
-					<td>Hosting (3 months)</td>
-
-					<td>$75.00</td>
-				</tr>
-
-				<tr class="item last">
-					<td>Domain name (1 year)</td>
-
-					<td>$10.00</td>
-				</tr>
-
-				<tr class="total">
-					<td></td>
-
-					<td>Total: $385.00</td>
-				</tr>
-			</table>
-		</div>
-	</body>
 </html>
+<script>
+
+
+</script>

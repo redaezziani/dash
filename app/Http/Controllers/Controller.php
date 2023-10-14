@@ -223,8 +223,8 @@ function UpFacture(Request $request){
         $factures=Facture::all();
         return view('Show_facture')->with('factures', $factures);
     }
-    function PDFContrat(){
-
-        return view('pdf');
+    function PDFContrat($id){
+        $data=Contrat::findOrFail($id);
+        return view('pdf')->with('data',$data);
     }
 }
