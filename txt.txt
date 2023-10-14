@@ -1,0 +1,2 @@
+<link rel="stylesheet" href="{{asset('build/assets/app-5eb15360.css )}}">
+<script type="module" scr="{{asset('build/assets/app-588b3994.js')}}"></script>

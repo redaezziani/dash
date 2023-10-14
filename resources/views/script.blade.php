@@ -215,5 +215,18 @@ $(document).ready(function(){
     })
 
 })
+$(document).ready(function() {
+    $('#fullprice, #contract-number').on('input', function() {
+        var fullPrice = $('#fullprice').val();
+        var donePrice = $('#contract-number').val();
+
+        // Check if both inputs have valid numbers
+        if ($.isNumeric(fullPrice) && $.isNumeric(donePrice)) {
+            var creditPrice = fullPrice - donePrice;
+            $('#contract-number').val(creditPrice);
+        }
+    });
+});
+
 
 </script>

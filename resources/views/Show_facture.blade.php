@@ -16,7 +16,8 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        @vite('resources/css/app.css')
+        <link rel="stylesheet" href="{{asset('build/assets/app-5eb15360.css')}}">
+        <script type="module" scr="{{asset('build/assets/app-588b3994.js')}}"></script>
     </head>
     <body
 class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen flex items-center flex-col justify-start bg-gray-100'
@@ -213,7 +214,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 <td
                 class="py-2"
                 >
-                    <a href="/PDFContrat/{{$item->id}}">
+                    <a href="/PDFContrat">
                     <button
                     class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
                     >
@@ -264,3 +265,4 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
 
 
 </html>
+
