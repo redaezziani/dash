@@ -8,7 +8,6 @@
     </title>
     <style>
         
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap');
 
 *,*::after, *::before{
     box-sizing: border-box;
@@ -18,12 +17,10 @@
 
 
 body{
-    direction: rtl;
     font-family: 'Cairo', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: right;
     overflow-x: hidden;
 }
 
@@ -32,162 +29,414 @@ body{
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    direction: rtl;
-    text-align: right;
+    align-items: start;
+    flex-direction: column;
     width: 700px;
     min-height: 880px;
     padding: 20px;
+    border: 1px solid #000;
 
 }
-
-.group img.bg{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-.group .text-content{
-    font-size: .9rem;
+.group .groups{
     display: flex;
-    width: 100%;
-    justify-content: start;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: start;
-    z-index: 2;
-    gap: 10px;
+    width: 100%;
 }
-.group .text-content p{
-    font-size: .7rem;
-    font-weight: 900;
-    color: #fff;
-    margin-bottom: 1rem;
-}
-
-.group .text-content p.red{
-    color: #ff0000;
-}
-
-.group .text-content span.text{
-    color: #000000;
-}
-.group .text-content .list{
-    z-index: 2;
-    padding: 20px;
+.group .groups .g-1{
+    width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 1rem;
+    justify-content: start;
+    align-items: flex-start;
+}
+.group .groups .g-1 .title{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.group .groups .g-1 .text{
+    font-size: 16px;
+    font-weight: 400;
+}
+.group .groups .g-1 .text .big{
+    font-size: 30px;
+    font-weight: 700;
+}
+.group .groups .g-1 p{
+    font-size: 16px;
+    font-weight: 400;
+}
+.group .groups .g-2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.group .groups .g-2 img{
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 20px;
+}
+.group .groups .g-2 .table{
     width: 100%;
-}
-.group .text-content .title{
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-align: center;
-    color: #fff;
-    background-color: #000000;
-    width: 100%;
-}
-.group .text-content .list .red{
-    color: #ff0000;
-}
-.group .text-content .list h3{
-    font-size: 1rem;
-    font-weight: 600;
-    color: #ffffff;
-    text-align: center;
-    width: 100%;
-    background-color: #000000;
-}
-.group .text-content .list .group-sign{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    gap: 10px;
+    flex-direction: column;
 }
-.group .text-content .list .group-sign img{
-    width: 180px;
+.group .groups .g-2 .table .head{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 10px;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+    background-color: blue;
+    color: aliceblue;
 }
 
-.group .text-content .list .group-sign p.text{
-    font-size: .7rem;
-    font-weight: 900;
-    color: #000000;
-    margin-bottom: 1rem;
+.group .groups .g-2 .table .body{
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 10px;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.group .groups .g-2 .table .body .half{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 10px;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.group .groups .g-1 .head{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.group .groups .g-1 .head .m{
+    font-size: 16px;
+    color: aliceblue;
+    background-color: blue;
+    padding: 5px 10px;
+}
+.group .groups .g-1 .head p{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.group .table{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.group .table .head{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 10px;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+    background-color: blue;
+    color: aliceblue;
+}
+
+.group .table .body{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 10px;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.group .table .body .half{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 10px;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.group .footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.group .footer .g-1{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+
+
+}
+.group .footer .g-1 p{
+    width: 100%;
+    font-size: 16px;
+    color: blue;
+    background-color: rgba(169, 169, 248, 0.712);
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.group .footer .g-2{
+    width: 50%;
+    display: flex;
+    justify-content: start ;
+    align-items: start;
+    color: rgb(0, 0, 0);
+    background-color: rgba(162, 162, 252, 0.712);
+}
+.group .footer .g-2 .groupe-1{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    background-color: rgba(169, 169, 248, 0.712);
+    padding: 5px 10px;
+}
+.group .footer .g-2 .groupe-2{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    background-color: rgba(207, 207, 255, 0.712);
+
+    padding: 5px 10px;
+}
+
+.group .footer .g-2 .groupe-2 p{
+    position: absolute;
+    top: 90px;
+    right: 5;
+}
+
+.group .footer .g-1  .sign{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    object-position: center;
+    top: 40px;
+    z-index: 0;
+    left: 20px;
+}
+.group .footer .g-1 .text-sing{
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    z-index: 1;
+    background-color: transparent;
+}
+.group .last{
+    width: 70%;
+    margin-top: 10px;
     text-align: center;
+    margin-left: 100px;
+    z-index: 1;
 }
 
     </style>
 </head>
 <body>
     <div class="group">
-        <img alt="test" class="bg" src="./WhatsApp Image 2023-10-13 at 5.39.13 PM.jpeg">
-        <div class="text-content">
-            <div
-            class="title"
-            >
-                <h3>
-                    اتفاقية تصميم مواقع الكترونية
-                </h3>
-            </div>
-            <p
-            class="red"
-            >
-                الطرف الاول شركة :خط الاحتراف لتصميم مواقع الشبكة المعلوماتية سجل تجاري رقم / 889765 مقرها : دولة الامارات العربية المتحدة خط الاحتراف : <span class="text">اتفق كل من السيد / اسم العميل ، على ان تقوم شراكتنا بتقديم خدماتنا و العمل على بدء تشغيلها وفقا للقواعد و الاشتراطات المحلية و الدولية المعمول بها في هذا المجال و رغبة منه فتتكلف شركتنا ادارة المواقع الالكترونية على منصة شوبيفاي و مدتها 30 يوم من تاريخ العقد و يتم ذكر كل التفاصيل في المتفق عليه و لا تتحمل اي تكاليف اضافات في منصة شوبيفاي ذلك على الانترنت له وفق القواعد المعمول بها في هذا الشئن ،</span> و لا تتحمل الشركة اي مسؤولية تجاهرحقوق الغير في اي من المتطلبات ان كان ، فقد اتفقا و هما في كامل اهليتهما القانونية على الالتزام بمواعيد التسليم و جودة العمل من شركتنا و على<span class="text">السيد / اسم العميل  ، </span>تسليم التفاصيل المطلوبة و الدفعة المالية المحددة و يبدء تنفيذ العمل فورا توقيع على العقد حيث غير ممكن الغاء العقد الا بموافقة الطرفين. 
-            </p>
-            <div class="list">
-                <p
-                class="red"
+        <h2
+                class="title"
                 >
-                    يتم توفير المتفق عليه كالتالي:
+                    KHAT AL EHTERRAF DESIGNER WE SITE
+                </h2>
+        <div class="groups">
+            <div class="g-1">
+                
+                <p
+                class="text"
+                >
+                united arab emirates <span class="big">INVOICE</span>
+                Dubai
                 </p>
-                <ul>
-                    <li>
-                        متتبعة اخطاء الموقع
-                    </li>
-                </ul>
+                <p>
+                    [+971] 599-4530
+                </p>
+                <p>
+                    Commerial License No. 889765
+                </p>
+
+                <div class="head">
+                    <p
+                    class="m"
+                    >
+                        build to 
+                    </p>
+                    <p>
+                        ahmed mohamed
+                    </p>
+                    <p>
+                        99848477888673
+                    </p>
+                </div>
             </div>
-            <div class="list">
-                <h3>
-                    التكلفة و مدة التنفيذ و الشروط
-                </h3>
-                <ul>
-                    <li>
-                        تكلفة 100 درهم امراتي
-                    </li>
-                    <li>
-                        بدون اشتراك شهري او سنوي لدى شركتنا
-                    </li>
-                    <li>
-                        اي اضافة يكون عليها رسوم على صاحب الموقع بالكامل
-                    </li>
-                    <li class="red">
-                        ملاحظة الدفع : لا مانع من تحويل المبلغ على الحساب / سعود النحاس بصفته الادارية و المبيعات بشركة
-                    </li>
-                    <li class="red">
-                        ملاحظة الدفع: لا مانع من الدفع عبر حساب الشركة عبر رابط قصير
-                    </li>
-                </ul>
+            <div class="g-2">
+                <img src="./WhatsApp Image 2023-10-14 at 1.40.06 PM.jpeg" alt="" srcset="">
+                <div
+                class="table"
+                >
+                <div class="head">
+                    <p>
+                        INVOICE
+                    </p>
+
+                    <p>
+                        DATE
+                    </p>
+                </div>
+                <div class="body">
+                    <p>
+                        001
+                    </p>
+                    <p>
+                        14/10/2021
+                    </p>
+                </div>
+                </div>
+                <div
+                class="table"
+                >
+                <div class="head">
+                    <p>
+                        CASTOMER ID
+                    </p>
+
+                    <p>
+                        TERMS
+                    </p>
+                </div>
+                <div class="body">
+                    <p
+                    class="half"
+                    >
+                        123
+                    </p>
+                    <p
+                    class="half"
+                    >
+                        web site design and development
+                    </p>
+                </div>
+                </div>
             </div>
-            <div class="list">
-                <h3>
-                    التوقيعات الرسمية
-                </h3>
-                <div class="group-sign">
-                   <img src="./WhatsApp Image 2023-10-13 at 5.41.22 PM.jpeg" alt="./">
-                   <p
-                   class="text"
-                   >
-                          السيد / اسم العميل <br>
-                            التوقيع : .............................
-                        
-                   </p>
+    
+        </div>
+        <div class="table">
+            <div class="head">
+                <p>
+                    DESCREPTION
+                </p>
+                    <p>
+                        QTY
+                    </p>
+                    <p>
+                        UNIT PRICE
+                    </p>
+                    <p>
+                        AMOUNT
+                    </p>
+            </div>
+            <div class="body">
+
+                <p
+                class="half"
+                >
+                    web site design and development
+                </p>
+                <p
+                class="half"
+                >
+                    1
+                </p>
+                <p
+                class="half"
+                >
+                    1000
+                </p>
+                <p
+                class="half"
+                >
+                    1000
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="g-1">
+                <p>
+                    <span class="big">THANK YOU</span> FOR YOUR BUSINESS!
+                </p>
+                <p
+                class="text-sing"
+                >
+                    Signature et stamp
+                </p>
+                <img class="sign" src="./WhatsApp Image 2023-10-13 at 5.41.22 PM.jpeg" alt="" srcset="">
+            </div>
+            <div class="g-2">
+                <div class="groupe-1">
+                    <P>
+                        SUBTOTAL
+                    </P>
+                    <p>
+                        PIAD
+                    </p>
+                    <P>
+                        DUE
+                    </P>
+                    <P>
+                        TOTAL
+                    </P>
+                </div>
+                <div class="groupe-2">
+                    <P>
+                        129939 درهم اماراتي
+                    </P>
                 </div>
             </div>
         </div>
+        <p
+        class="last"
+        >
+        The invoice is considered void without signature and company seal					
+        If you have any questions about this invoice, please contact
+        <br>
+        <b>
+         KHAT AL EHTERAF COMPUTER DESIGING +971505994530 info@plinee.com
+        </b>							
+        </p>
     </div>
 </body>
 </html>
