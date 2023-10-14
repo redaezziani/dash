@@ -29,6 +29,5 @@ Route::post('/updateFacture', [App\Http\Controllers\Controller::class, 'UpFactur
 Route::get('/Add-Facture', [App\Http\Controllers\Controller::class, 'AddFacture'])->name('AddFacture');
 Route::post('/Store-Facture', [App\Http\Controllers\Controller::class, 'storeFacture'])->name('Store-Facture');
 Route::get('/Show-facture', [App\Http\Controllers\Controller::class, 'ShowFacture'])->name('Show-facture');
-Route::get('/PDFContrat/{id}', [App\Http\Controllers\Controller::class, 'PDFContrat'])->name('PDFContrat');
-
+Route::get('/PDFContrat', [App\Http\Controllers\Controller::class, 'PDFContrat'])->name('PDFContrat');
 

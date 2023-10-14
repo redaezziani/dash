@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller as BaseController;
 use App\Models\Contrat;
 use App\Models\Facture;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade\Pdf;
+use PDF;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
@@ -223,11 +223,8 @@ function UpFacture(Request $request){
         $factures=Facture::all();
         return view('Show_facture')->with('factures', $factures);
     }
-    function PDFContrat($id){
-        $dat=Contrat::find($id);
-        $data=$dat->toArray();
-        view()->share('data',$data);
-        $pdf=Pdf::loadView('pdf',$data);
-        return $pdf->download('pdf.pdf');
+    function PDFContrat(){
+
+        return view('pdf');
     }
 }

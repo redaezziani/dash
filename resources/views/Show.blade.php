@@ -225,7 +225,7 @@ class=' font-cairo overflow-x-hidden scrollbar-thin w-full relative h-screen fle
                 <td
                 class="py-2"
                 >
-                    <a href="/PDFContrat/{{$item->id}}">
+                    <a href="/PDFContrat">
                     <button
                     class="bg-green-500 text-white rounded-md px-3 py-1.5 text-sm"
                     >
