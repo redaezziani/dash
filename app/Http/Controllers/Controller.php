@@ -245,4 +245,8 @@ function UpFacture(Request $request){
         $data=Contrat::findOrFail($id);
         return view('pdf')->with('data',$data);
     }
+    function PDFFacture($id){
+        $data=Facture::findOrFail($id);
+        return view('pdffacure')->with('data',$data);
+    }
 }
