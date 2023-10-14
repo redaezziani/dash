@@ -133,8 +133,7 @@
             <input  id="price_qte_{{ $i }}" name="price_qte_{{ $i }}" type="number" placeholder="سعر الوحدة" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
         <div class="group-input md:w-[25%] flex w-full flex-col gap-2 justify-start items-start rtl">
-            <label for="total_qte_{{ $i }}">  السعر الكلي {{ $i }} </label>
-            <input readonly id="total_qte_{{ $i }}" name="total_qte_{{ $i }}" type="number" placeholder="السعر الكلي" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
+            <input hidden id="total_qte_{{ $i }}" name="total_qte_{{ $i }}" type="number" placeholder="السعر الكلي" class="border border-gray-500 text-sm rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-200" />
         </div>
     </div>
     @endfor
