@@ -5,15 +5,20 @@
 		<title>A simple, clean, and responsive HTML invoice template</title>
 
 		<style>
+            @page {
+                    header: page-header;
+                    footer: page-footer;
+                  }
+            body{
+                font-family: 'XBRiyaz',sans-serif;
+            }
 			.invoice-box {
 				max-width: 800px;
 				margin: auto;
 				padding: 30px;
-				border: 1px solid #eee;
-				box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 				font-size: 16px;
 				line-height: 24px;
-				font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+                font-family: 'XBRiyaz',sans-serif;
 				color: #555;
 			}
 
@@ -86,7 +91,7 @@
 			/** RTL **/
 			.invoice-box.rtl {
 				direction: rtl;
-				font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+                font-family: 'XBRiyaz',sans-serif;
 			}
 
 			.invoice-box.rtl table {
